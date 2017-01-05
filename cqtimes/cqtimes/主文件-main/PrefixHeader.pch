@@ -1,0 +1,53 @@
+//
+//  PrefixHeader.pch
+//  cqtimes
+//
+//  Created by 壹号商圈 on 17/1/5.
+//  Copyright © 2017年 com.houshuai. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+/*** 如果希望某些内容能拷贝到任何源代码文件(OC\C\C++等), 那么就不要写在#ifdef __OBJC__和#endif之间 ***/
+
+
+/***** 在#ifdef __OBJC__和#endif之间的内容, 只会拷贝到OC源代码文件中, 不会拷贝到其他语言的源代码文件中 *****/
+#ifdef __OBJC__
+//接口
+#import "ApiHeader.h"
+//模型解析
+#import "MJExtension.h"
+
+// 1DEBUG模式,控制输出
+#ifdef DEBUG
+# define DLog(fmt, ...) NSLog((@"[函数名:%s]" "[行号:%d]" fmt),__FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+# define DLog(...);
+#endif
+#define DLogFunc DLog(@"%s", __func__);
+
+#define SCREEN_WIDTH   [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT  [UIScreen mainScreen].bounds.size.height
+
+
+//防止block块循环引用用weakSelf
+#define WKSELF __unsafe_unretained typeof(self) weakSelf = self
+//创建可变字典，主要用于POST请求数据
+#define CQSBParameters NSMutableDictionary *parameters = [NSMutableDictionary dictionary]
+
+//=========颜色==============
+//基础配色
+#define CQSBColorA(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)/255.0]
+#define CQSBColor(r, g, b) CQSBColorA((r), (g), (b), 255)
+//随机色
+#define CQSBRandomColor CQSBColor(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255))
+//主色调
+#define CQSBMainColor CQSBColor(253,183,46)
+//文字颜色
+#define CQSBTextColor CQSBColor(61, 61, 61)
+//分割线颜色
+#define CQSBLineColor CQSBColor(229, 229, 229)
+//=========颜色==============
+#endif
+#endif /* PrefixHeader_pch */
