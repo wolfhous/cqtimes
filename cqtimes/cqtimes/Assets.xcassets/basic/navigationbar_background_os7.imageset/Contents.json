@@ -1,6 +1,20 @@
 {
   "images" : [
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 1,
+          "height" : 1
+        },
+        "cap-insets" : {
+          "bottom" : 13,
+          "top" : 0,
+          "right" : 0,
+          "left" : 0
+        }
+      },
       "idiom" : "universal",
       "filename" : "navigationbar_background_os7.png",
       "scale" : "1x"

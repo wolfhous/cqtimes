@@ -8,6 +8,8 @@
 
 #import "CQSBHomeVC.h"
 #import "CQSBHomeTitleBtn.h"
+#import "CQSBBasicVC.h"
+#import "UIBarButtonItem+HSExtension.h"
 @interface CQSBHomeVC ()<UIScrollViewDelegate>
 
 @property (nonatomic,strong)UIScrollView *titleScrollView;
@@ -23,8 +25,11 @@
 
 -(UIScrollView *)titleScrollView{
     if (!_titleScrollView) {
-        _titleScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH - 40, 40)];
-        _titleScrollView.backgroundColor = [UIColor blueColor];
+        _titleScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 40, 40)];
+        _titleScrollView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        _titleScrollView.showsHorizontalScrollIndicator = NO;
+        _titleScrollView.showsVerticalScrollIndicator = NO;
+        _titleScrollView.bounces = NO;
         [self.view addSubview:_titleScrollView];
     }
     return _titleScrollView;
@@ -34,7 +39,7 @@
 -(NSMutableArray *)titleArray{
     if (!_titleArray) {
         _titleArray = [NSMutableArray array];
-        [_titleArray addObjectsFromArray:@[@"0",@"1",@"2"]];
+        [_titleArray addObjectsFromArray:@[@"0234234",@"12",@"2786",@"你",@"你好",@"你好啊",@"非常好好"]];
     }
     return _titleArray;
 }
@@ -45,35 +50,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = CQSBRandomColor;
+    self.view.backgroundColor = [UIColor whiteColor];
     //设置导航栏
     [self setupNavBar];
     //设置新闻分类栏目
     [self setupCQTimesCatogary];
-//    //设置子控制器
-//    [self setupChildVC];
-//    //添加子控制器
-//    [self addChildVcView];
+    //设置子控制器
+    [self setupChildVC];
+    //添加子控制器
+    [self addChildVcView];
 }
 
 -(void)setupNavBar{
-    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem hs_itemWithImage:@"leftImage_80x27_" highImage:@"leftImage_80x27_" target:self action:@selector(clickLeftItem)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem hs_cqst_itemWithImage:@"Search_21x21_" highImage:@"Search_21x21_" title:@"搜索您想搜的" target:self action:@selector(clickRightItem)];
+}
+-(void)clickLeftItem{
+    DLogFunc
+}
+-(void)clickRightItem{
+    DLogFunc
 }
 -(void)setupCQTimesCatogary{
-    
-    self.titleScrollView.contentSize = CGSizeMake(self.titleArray.count * 40, self.titleScrollView.xmg_height);
+    self.automaticallyAdjustsScrollViewInsets = NO;
     //标题按钮
-    CGFloat w = 40;
     CGFloat h = self.titleScrollView.xmg_height - 1;
+    CQSBHomeTitleBtn *lastBtn;
     for (NSInteger i = 0; i < self.titleArray.count; i++) {
         CQSBHomeTitleBtn *btn = [CQSBHomeTitleBtn buttonWithType:UIButtonTypeCustom];
         btn.tag = i;
         [btn setTitle:self.titleArray[i] forState:UIControlStateNormal];
-        CGFloat x = i * w;
-        btn.frame = CGRectMake(x, 0, w, h);
+        [btn sizeToFit];
+        btn.xmg_x = lastBtn.xmg_right;
+        btn.xmg_y = 0;
+        btn.xmg_height = h;
         [btn addTarget:self action:@selector(clickTitleBtn:) forControlEvents:UIControlEventTouchUpInside];
         [self.titleScrollView addSubview:btn];
+        lastBtn = btn;
     }
+    self.titleScrollView.contentSize = CGSizeMake(lastBtn.xmg_right, 40);
     //首个选中按钮
     self.selectBtn = self.titleScrollView.subviews.firstObject;
     self.selectBtn.selected = YES;
@@ -88,29 +103,27 @@
     indicateView.xmg_width = self.selectBtn.titleLabel.xmg_width;
     indicateView.xmg_centerX = self.selectBtn.center.x;
     [self.titleScrollView addSubview:indicateView];
-    
 }
 
 //添加子控制器
 -(void)setupChildVC{
-    // 不允许自动调整scrollView的内边距
-//    self.automaticallyAdjustsScrollViewInsets = NO;
     //设置滚动视图
-    UIScrollView * scrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
+    UIScrollView * scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, self.titleScrollView.xmg_bottom, SCREEN_WIDTH, SCREEN_HEIGHT - 64 - self.titleScrollView.xmg_height - 44)];
     scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
     scrollView.delegate = self;
-    scrollView.contentSize = CGSizeMake(SCREEN_WIDTH * self.titleArray.count, SCREEN_HEIGHT);
+    scrollView.contentSize = CGSizeMake(SCREEN_WIDTH * self.titleArray.count, SCREEN_HEIGHT- 64 - self.titleScrollView.xmg_height - 44);
     scrollView.pagingEnabled = YES;
+    scrollView.bounces = NO;
     [self.view addSubview:scrollView];
     self.scrollView = scrollView;
     
     //添加子控制器
-    UIViewController *homeVC = [[UIViewController alloc]init];
-    [self addChildViewController:homeVC];
-    UIViewController *discoverVC = [[UIViewController alloc]init];
-    [self addChildViewController:discoverVC];
-    UIViewController *meVC = [[UIViewController alloc]init];
-    [self addChildViewController:meVC];
+    for (NSInteger i = 0; i < self.titleArray.count; i ++) {
+        CQSBBasicVC *vc = [CQSBBasicVC new];
+        [self addChildViewController:vc];
+    }
+    
 
 }
 #pragma mark - <UIScrollViewDelegate>
@@ -165,7 +178,6 @@
     CGPoint point = self.scrollView.contentOffset;
     point.x = btn.tag * self.scrollView.xmg_width;
     [self.scrollView setContentOffset:point animated:YES];
-    
 }
 
 

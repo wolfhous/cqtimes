@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D557AB81E209DA400F54EBB /* CQSBBasicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D557AB71E209DA400F54EBB /* CQSBBasicVC.m */; };
 		9D6661DD1E1E316C00194595 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6661DC1E1E316C00194595 /* main.m */; };
 		9D6661E01E1E316C00194595 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6661DF1E1E316C00194595 /* AppDelegate.m */; };
 		9D6661E61E1E316C00194595 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6661E41E1E316C00194595 /* Main.storyboard */; };
@@ -37,6 +38,8 @@
 /* Begin PBXFileReference section */
 		203BB15640B690AAC1E215C5 /* libPods-cqtimes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cqtimes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C4F918D5DBAB0F31F8AD5B0 /* Pods-cqtimes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cqtimes.release.xcconfig"; path = "Pods/Target Support Files/Pods-cqtimes/Pods-cqtimes.release.xcconfig"; sourceTree = "<group>"; };
+		9D557AB61E209DA400F54EBB /* CQSBBasicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBBasicVC.h; sourceTree = "<group>"; };
+		9D557AB71E209DA400F54EBB /* CQSBBasicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBBasicVC.m; sourceTree = "<group>"; };
 		9D6661D81E1E316C00194595 /* cqtimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cqtimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6661DC1E1E316C00194595 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9D6661DE1E1E316C00194595 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -236,6 +239,8 @@
 			children = (
 				9D6662041E1E3A8300194595 /* CQSBHomeVC.h */,
 				9D6662051E1E3A8300194595 /* CQSBHomeVC.m */,
+				9D557AB61E209DA400F54EBB /* CQSBBasicVC.h */,
+				9D557AB71E209DA400F54EBB /* CQSBBasicVC.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -456,6 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D557AB81E209DA400F54EBB /* CQSBBasicVC.m in Sources */,
 				9D6662371E1E44CB00194595 /* UILabel+HSLabel.m in Sources */,
 				9D6661E01E1E316C00194595 /* AppDelegate.m in Sources */,
 				9D66621E1E1E3F1B00194595 /* CQSBRefreshNormalHeader.m in Sources */,
