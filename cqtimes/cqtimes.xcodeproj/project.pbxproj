@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D5306751E2DB54300C561CE /* CQSBTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5306741E2DB54300C561CE /* CQSBTabBar.m */; };
 		9D557AB81E209DA400F54EBB /* CQSBBasicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D557AB71E209DA400F54EBB /* CQSBBasicVC.m */; };
 		9D6661DD1E1E316C00194595 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6661DC1E1E316C00194595 /* main.m */; };
 		9D6661E01E1E316C00194595 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6661DF1E1E316C00194595 /* AppDelegate.m */; };
-		9D6661E61E1E316C00194595 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6661E41E1E316C00194595 /* Main.storyboard */; };
 		9D6661E81E1E316C00194595 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6661E71E1E316C00194595 /* Assets.xcassets */; };
 		9D6661EB1E1E316C00194595 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6661E91E1E316C00194595 /* LaunchScreen.storyboard */; };
 		9D6662021E1E390C00194595 /* CQSBTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6662011E1E390C00194595 /* CQSBTabBarController.m */; };
@@ -38,13 +38,14 @@
 /* Begin PBXFileReference section */
 		203BB15640B690AAC1E215C5 /* libPods-cqtimes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cqtimes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C4F918D5DBAB0F31F8AD5B0 /* Pods-cqtimes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cqtimes.release.xcconfig"; path = "Pods/Target Support Files/Pods-cqtimes/Pods-cqtimes.release.xcconfig"; sourceTree = "<group>"; };
+		9D5306731E2DB54300C561CE /* CQSBTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBTabBar.h; sourceTree = "<group>"; };
+		9D5306741E2DB54300C561CE /* CQSBTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBTabBar.m; sourceTree = "<group>"; };
 		9D557AB61E209DA400F54EBB /* CQSBBasicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBBasicVC.h; sourceTree = "<group>"; };
 		9D557AB71E209DA400F54EBB /* CQSBBasicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBBasicVC.m; sourceTree = "<group>"; };
 		9D6661D81E1E316C00194595 /* cqtimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cqtimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6661DC1E1E316C00194595 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9D6661DE1E1E316C00194595 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9D6661DF1E1E316C00194595 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9D6661E51E1E316C00194595 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D6661E71E1E316C00194595 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D6661EA1E1E316C00194595 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D6661EC1E1E316C00194595 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,7 +152,6 @@
 				9D6661FF1E1E369500194595 /* 主文件-main */,
 				9D6661DE1E1E316C00194595 /* AppDelegate.h */,
 				9D6661DF1E1E316C00194595 /* AppDelegate.m */,
-				9D6661E41E1E316C00194595 /* Main.storyboard */,
 				9D6661E71E1E316C00194595 /* Assets.xcassets */,
 				9D6661E91E1E316C00194595 /* LaunchScreen.storyboard */,
 				9D6661EC1E1E316C00194595 /* Info.plist */,
@@ -298,6 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				9D6662031E1E394200194595 /* PrefixHeader.pch */,
+				9D5306731E2DB54300C561CE /* CQSBTabBar.h */,
+				9D5306741E2DB54300C561CE /* CQSBTabBar.m */,
 				9D6662001E1E390C00194595 /* CQSBTabBarController.h */,
 				9D6662011E1E390C00194595 /* CQSBTabBarController.m */,
 				9D66620A1E1E3AB100194595 /* CQSBNavigationController.h */,
@@ -402,7 +404,6 @@
 			files = (
 				9D6661EB1E1E316C00194595 /* LaunchScreen.storyboard in Resources */,
 				9D6661E81E1E316C00194595 /* Assets.xcassets in Resources */,
-				9D6661E61E1E316C00194595 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +479,7 @@
 				9D6662361E1E44CB00194595 /* UIImageView+HSRound.m in Sources */,
 				9D6662391E1E44CB00194595 /* UITextField+HSTextField.m in Sources */,
 				9D6662061E1E3A8300194595 /* CQSBHomeVC.m in Sources */,
+				9D5306751E2DB54300C561CE /* CQSBTabBar.m in Sources */,
 				9D6662151E1E3ED800194595 /* CQSBRefreshFooter.m in Sources */,
 				9D6662101E1E3C4100194595 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				9D66623A1E1E44CB00194595 /* UIView+ZKBView.m in Sources */,
@@ -489,14 +491,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9D6661E41E1E316C00194595 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9D6661E51E1E316C00194595 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9D6661E91E1E316C00194595 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

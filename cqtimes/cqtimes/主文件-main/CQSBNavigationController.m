@@ -10,6 +10,8 @@
 
 //侧滑
 #import "UINavigationController+FDFullscreenPopGesture.h"
+
+#import "UINavigationBar+HSNavigationBar.h"
 @interface CQSBNavigationController ()
 
 @end
@@ -20,7 +22,7 @@
     [super viewDidLoad];
     //一句话添加侧滑返回功能
     self.navigationController.fd_fullscreenPopGestureRecognizer.enabled=YES;
-    
+    [self.navigationBar hs_hideShadowImage];
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbar_background"] forBarMetrics:UIBarMetricsDefault];
 }
 

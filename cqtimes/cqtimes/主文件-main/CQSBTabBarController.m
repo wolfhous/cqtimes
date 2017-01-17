@@ -7,6 +7,7 @@
 //
 
 #import "CQSBTabBarController.h"
+#import "CQSBTabBar.h"
 #import "CQSBNavigationController.h"
 #import "CQSBHomeVC.h"
 #import "CQSBMeVC.h"
@@ -22,6 +23,8 @@
     [self setupItemTitleTextAttributes];
     /**** 添加子控制器 ****/
     [self setupChildViewControllers];
+    /**** 更换tabbar ****/
+    [self setValue:[CQSBTabBar new] forKey:@"tabBar"];
 }
 /**
  *  设置所有UITabBarItem的文字属性
@@ -44,7 +47,6 @@
  */
 - (void)setupChildViewControllers
 {
-    
     [self setupOneChildViewController:[[CQSBNavigationController alloc]initWithRootViewController:[CQSBHomeVC new]] title:@"首页" image:@"HomeIconNormal_30x30_" selectedImage:@"HomeIconHigh_30x30_"];
     [self setupOneChildViewController:[[CQSBNavigationController alloc]initWithRootViewController:[CQSBMeVC new]] title:@"我的" image:@"MyIconNormal_30x30_" selectedImage:@"MyIconHigh_30x30_"];
 }

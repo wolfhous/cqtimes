@@ -16,7 +16,6 @@
 @property (nonatomic,strong)NSMutableArray *titleArray;
 @property (nonatomic,strong)CQSBHomeTitleBtn *selectBtn;
 @property (nonatomic,strong)UIView *indicateView;
-
 @property (nonatomic,strong)UIScrollView *scrollView;
 @end
 
@@ -62,11 +61,17 @@
 }
 
 -(void)setupNavBar{
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem hs_itemWithImage:@"leftImage_80x27_" highImage:@"leftImage_80x27_" target:self action:@selector(clickLeftItem)];
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem hs_cqst_itemWithImage:@"Search_21x21_" highImage:@"Search_21x21_" title:@"搜索您想搜的" target:self action:@selector(clickRightItem)];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem hs_itemWithImage:@"discover_unlogin_40x40_" highImage:@"discover_unlogin_40x40_" target:self action:@selector(clickLeftItem)];
+    
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem hs_itemWithImage:@"extraBtnBackgroundImage_21x21_" highImage:@"extraBtnBackgroundImage_21x21_" target:self action:@selector(clickRightItem)];
+    
 }
 -(void)clickLeftItem{
     DLogFunc
+    UIViewController *vc = [UIViewController new];
+    vc.view.backgroundColor = CQSBRandomColor;
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 -(void)clickRightItem{
     DLogFunc
