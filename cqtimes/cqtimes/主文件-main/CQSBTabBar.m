@@ -114,6 +114,11 @@
 //点击中间按钮事件
 -(void)clickCenterBtn{
     DLogFunc
+    
+    
+//    UITabBarController *tabbarVC = (UITabBarController *) [UIApplication sharedApplication].keyWindow.rootViewController;
+//    UINavigationController *nav =  tabbarVC.selectedViewController;
+    
 }
 
 

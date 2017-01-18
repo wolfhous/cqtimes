@@ -22,8 +22,7 @@
     [super viewDidLoad];
     //一句话添加侧滑返回功能
     self.navigationController.fd_fullscreenPopGestureRecognizer.enabled=YES;
-    [self.navigationBar hs_hideShadowImage];
-    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbar_background"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
 }
 
 /**
@@ -50,6 +49,7 @@
 {
     [self popViewControllerAnimated:YES];
 }
+
 
 
 @end

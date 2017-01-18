@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="U6b-Vx-4bR" customClass="CQSBNewTypeCollectionReusableView">
+            <rect key="frame" x="0.0" y="0.0" width="460" height="75"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMp-lu-7O3">
+                    <rect key="frame" x="20" y="27" width="100" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="VIg-4S-kYb"/>
+                        <constraint firstAttribute="width" constant="100" id="cG7-ww-qlv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckT-oA-3SY">
+                    <rect key="frame" x="365" y="26.5" width="75" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="KeN-r3-bNa"/>
+                        <constraint firstAttribute="width" constant="75" id="aQ4-G2-JFB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="排序/删除">
+                        <color key="titleColor" red="0.97254901959999995" green="0.63921568630000003" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="0.97254901959999995" green="0.63921568630000003" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="ckT-oA-3SY" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="2zE-6u-DNX"/>
+                <constraint firstAttribute="trailing" secondItem="ckT-oA-3SY" secondAttribute="trailing" constant="20" id="LXU-HK-ie3"/>
+                <constraint firstItem="mMp-lu-7O3" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="Ro9-TA-TEO"/>
+                <constraint firstItem="mMp-lu-7O3" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="20" id="hEp-Rx-SKZ"/>
+            </constraints>
+            <connections>
+                <outlet property="rightBtn" destination="ckT-oA-3SY" id="VxM-Zc-IDc"/>
+                <outlet property="titleLabel" destination="mMp-lu-7O3" id="mGW-IC-R3P"/>
+            </connections>
+            <point key="canvasLocation" x="105" y="66.5"/>
+        </collectionReusableView>
+    </objects>
+</document>

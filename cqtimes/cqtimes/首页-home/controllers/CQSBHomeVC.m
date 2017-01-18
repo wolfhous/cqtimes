@@ -9,6 +9,7 @@
 #import "CQSBHomeVC.h"
 #import "CQSBHomeTitleBtn.h"
 #import "CQSBBasicVC.h"
+#import "CQSBNewsTypeVC.h"
 #import "UIBarButtonItem+HSExtension.h"
 @interface CQSBHomeVC ()<UIScrollViewDelegate>
 
@@ -24,12 +25,14 @@
 
 -(UIScrollView *)titleScrollView{
     if (!_titleScrollView) {
-        _titleScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 40, 40)];
+        _titleScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 40, 44)];
         _titleScrollView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         _titleScrollView.showsHorizontalScrollIndicator = NO;
         _titleScrollView.showsVerticalScrollIndicator = NO;
         _titleScrollView.bounces = NO;
-        [self.view addSubview:_titleScrollView];
+        
+        self.navigationItem.titleView = _titleScrollView;
+//        [self.view addSubview:_titleScrollView];
     }
     return _titleScrollView;
 }
@@ -66,6 +69,8 @@
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem hs_itemWithImage:@"extraBtnBackgroundImage_21x21_" highImage:@"extraBtnBackgroundImage_21x21_" target:self action:@selector(clickRightItem)];
     
 }
+
+//点击左侧按钮
 -(void)clickLeftItem{
     DLogFunc
     UIViewController *vc = [UIViewController new];
@@ -73,11 +78,15 @@
     [self.navigationController pushViewController:vc animated:YES];
     
 }
+//点击右侧按钮
 -(void)clickRightItem{
     DLogFunc
+    CQSBNewsTypeVC *vc= [CQSBNewsTypeVC new];
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
 }
 -(void)setupCQTimesCatogary{
-    self.automaticallyAdjustsScrollViewInsets = NO;
     //标题按钮
     CGFloat h = self.titleScrollView.xmg_height - 1;
     CQSBHomeTitleBtn *lastBtn;
@@ -113,7 +122,7 @@
 //添加子控制器
 -(void)setupChildVC{
     //设置滚动视图
-    UIScrollView * scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, self.titleScrollView.xmg_bottom, SCREEN_WIDTH, SCREEN_HEIGHT - 64 - self.titleScrollView.xmg_height - 44)];
+    UIScrollView * scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.delegate = self;

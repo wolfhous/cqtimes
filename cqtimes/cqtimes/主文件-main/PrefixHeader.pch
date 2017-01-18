@@ -14,12 +14,20 @@
 
 /***** 在#ifdef __OBJC__和#endif之间的内容, 只会拷贝到OC源代码文件中, 不会拷贝到其他语言的源代码文件中 *****/
 #ifdef __OBJC__
-//接口
-#import "ApiHeader.h"
-//模型解析
-#import "MJExtension.h"
 
-#import "UIView+ZKBView.h"
+#import "ApiHeader.h"//接口
+#import "HS_Http.h"//接口请求
+#import "MJExtension.h"//模型解析
+#import "Masonry.h"//自动布局
+
+#import "UIView+ZKBView.h"//view分类（frame设置）
+
+#import "HSManager.h"//管理集
+
+#import "CQSB_UserSingleton.h"//用户单例
+#import "CQSB_AppSingleton.h"//app 单例
+
+
 // 1DEBUG模式,控制输出
 #ifdef DEBUG
 # define DLog(fmt, ...) NSLog((@"[函数名:%s]" "[行号:%d]" fmt),__FUNCTION__, __LINE__, ##__VA_ARGS__);
@@ -35,7 +43,7 @@
 //防止block块循环引用用weakSelf
 #define WKSELF __unsafe_unretained typeof(self) weakSelf = self
 //创建可变字典，主要用于POST请求数据
-#define CQSBParameters NSMutableDictionary *parameters = [NSMutableDictionary dictionary]
+#define HSParameters NSMutableDictionary *parameters = [NSMutableDictionary dictionary]
 
 //=========颜色==============
 //基础配色
