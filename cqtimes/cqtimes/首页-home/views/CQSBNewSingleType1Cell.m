@@ -21,4 +21,10 @@
     // Configure the view for the selected state
 }
 
+
+-(void)setModel:(CQSBNewsListModel *)model{
+    _model = model;
+    
+    self.titleLabel.text = model.title;
+}
 @end

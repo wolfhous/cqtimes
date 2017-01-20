@@ -1,19 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CQSBNewSingleType1Cell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="87" id="KGk-i7-Jjw" customClass="CQSBNewSingleType1Cell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjm-5E-9Mp">
+                        <rect key="frame" x="285" y="56.5" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="DIm-7q-Wxr"/>
+                            <constraint firstAttribute="height" constant="20" id="hmQ-I7-JT9"/>
+                        </constraints>
+                        <state key="normal" image="closeBtn_27x27_"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBw-wO-5jY">
+                        <rect key="frame" x="15" y="15" width="290" height="41.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Gjm-5E-9Mp" secondAttribute="trailing" constant="15" id="2W6-gO-k77"/>
+                    <constraint firstItem="VBw-wO-5jY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="DGN-XV-CDZ"/>
+                    <constraint firstItem="VBw-wO-5jY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Ts9-D8-qY3"/>
+                    <constraint firstAttribute="trailing" secondItem="VBw-wO-5jY" secondAttribute="trailing" constant="15" id="X90-EP-qAZ"/>
+                    <constraint firstItem="Gjm-5E-9Mp" firstAttribute="top" secondItem="VBw-wO-5jY" secondAttribute="bottom" id="qfC-G1-lYd"/>
+                    <constraint firstAttribute="bottom" secondItem="Gjm-5E-9Mp" secondAttribute="bottom" constant="10" id="yCx-z9-1zS"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="delBtn" destination="Gjm-5E-9Mp" id="dUs-Hh-fvU"/>
+                <outlet property="titleLabel" destination="VBw-wO-5jY" id="lJi-Tw-mMw"/>
+            </connections>
+            <point key="canvasLocation" x="32" y="64.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="closeBtn_27x27_" width="27" height="27"/>
+    </resources>
 </document>

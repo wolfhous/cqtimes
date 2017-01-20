@@ -11,5 +11,19 @@
 #import "CQSBNewsListModel.h"
 @interface CQSBNewSingleType2Cell : UITableViewCell
 
+
+/**
+ 标题
+ */
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+
+
+/**
+ 右侧图片
+ */
+@property (weak, nonatomic) IBOutlet UIImageView *rightImageView;
+
+
 @property (nonatomic,strong)CQSBNewsListModel *model;
 @end

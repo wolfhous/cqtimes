@@ -10,6 +10,9 @@
 #import "CQSBNewsListModel.h"
 @interface CQSBNewSingleType1Cell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *delBtn;
 
 @property (nonatomic,strong)CQSBNewsListModel *model;
 

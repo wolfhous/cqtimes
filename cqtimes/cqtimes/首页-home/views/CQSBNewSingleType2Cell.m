@@ -21,4 +21,11 @@
     // Configure the view for the selected state
 }
 
+
+-(void)setModel:(CQSBNewsListModel *)model{
+    _model = model;
+    
+    self.titleLabel.text = model.title;
+    [self.rightImageView sd_setImageWithURL:[NSURL URLWithString:model.img] placeholderImage:[UIImage imageNamed:@"bigPlaceholder_414x193_"]];
+}
 @end

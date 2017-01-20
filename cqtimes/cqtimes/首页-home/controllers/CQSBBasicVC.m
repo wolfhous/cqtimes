@@ -122,22 +122,26 @@ static NSString *type3cellID = @"newSingleType3Cell";
     if ([self.arrayNews[indexPath.row].modelstatus isEqualToString:@"1"]) {//正常右侧图片
         CQSBNewSingleType2Cell *cell = [tableView dequeueReusableCellWithIdentifier:type2cellID forIndexPath:indexPath];
         cell.model = self.arrayNews[indexPath.row];
+        [cell setSeparatorInset:UIEdgeInsetsMake(0, 20, 0, 20)];
         return cell;
 
     }else if ([self.arrayNews[indexPath.row].modelstatus isEqualToString:@"3"]){//一排三个图片
         CQSBNewSingleType3Cell *cell = [tableView dequeueReusableCellWithIdentifier:type3cellID forIndexPath:indexPath];
         cell.model = self.arrayNews[indexPath.row];
+        [cell setSeparatorInset:UIEdgeInsetsMake(0, 20, 0, 20)];
         return cell;
 
     }else if ([self.arrayNews[indexPath.row].modelstatus isEqualToString:@"4"]){//文字类型新闻
         CQSBNewSingleType1Cell *cell = [tableView dequeueReusableCellWithIdentifier:type1cellID forIndexPath:indexPath];
         cell.model = self.arrayNews[indexPath.row];
+        [cell setSeparatorInset:UIEdgeInsetsMake(0, 20, 0, 20)];
         return cell;
 
     }else{
         DLog(@"其他新闻类型状态待确认 ====  【%@】====",self.arrayNews[indexPath.row].modelstatus);
         CQSBNewSingleType1Cell *cell = [tableView dequeueReusableCellWithIdentifier:type1cellID forIndexPath:indexPath];
         cell.model = self.arrayNews[indexPath.row];
+        [cell setSeparatorInset:UIEdgeInsetsMake(0, 20, 0, 20)];
         return cell;
 
     }
@@ -148,6 +152,47 @@ static NSString *type3cellID = @"newSingleType3Cell";
 
 
 
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    if ([self.arrayNews[indexPath.row].modelstatus isEqualToString:@"1"]) {//正常右侧图片
+        return [tableView fd_heightForCellWithIdentifier:type1cellID configuration:^(id cell) {
+            CQSBNewSingleType2Cell *cellMain = (CQSBNewSingleType2Cell *)cell;
+            cellMain.model = self.arrayNews[indexPath.row];
+            
+        }];
+
+        
+    }else if ([self.arrayNews[indexPath.row].modelstatus isEqualToString:@"3"]){//一排三个图片
+        return [tableView fd_heightForCellWithIdentifier:type3cellID configuration:^(id cell) {
+            CQSBNewSingleType3Cell *cellMain = (CQSBNewSingleType3Cell *)cell;
+            cellMain.model = self.arrayNews[indexPath.row];
+            
+        }];
+        
+    }else if ([self.arrayNews[indexPath.row].modelstatus isEqualToString:@"4"]){//文字类型新闻
+        return [tableView fd_heightForCellWithIdentifier:type1cellID configuration:^(id cell) {
+            CQSBNewSingleType1Cell *cellMain = (CQSBNewSingleType1Cell *)cell;
+            cellMain.model = self.arrayNews[indexPath.row];
+            
+        }];
+        
+    }else{
+        return [tableView fd_heightForCellWithIdentifier:type1cellID configuration:^(id cell) {
+            CQSBNewSingleType1Cell *cellMain = (CQSBNewSingleType1Cell *)cell;
+            cellMain.model = self.arrayNews[indexPath.row];
+            
+        }];
+        
+    }
+
+    
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self tableView:tableView didDeselectRowAtIndexPath:indexPath];
+}
 
 
 
