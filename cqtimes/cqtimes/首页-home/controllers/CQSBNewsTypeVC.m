@@ -184,9 +184,6 @@ static NSString *headerReusableView = @"headerReusableView";
     }else{//如果替换的分区不一样
         DLog(@"分区替换%ld->%ld",sourceIndexPath.section,destinationIndexPath.section);
     }
-    
-    
-    
 }
 
 @end

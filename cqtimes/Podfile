@@ -11,6 +11,6 @@ target 'cqtimes' do
   pod ’MJExtension'
   pod 'IQKeyboardManager'
   pod ‘Masonry’
-
+  pod ‘UITableView+FDTemplateLayoutCell’
 
 end

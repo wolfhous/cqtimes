@@ -21,6 +21,14 @@
 		9D4524FE1E2F4D1A002E5E9A /* CQSBNewsTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D4524FC1E2F4D1A002E5E9A /* CQSBNewsTypeCell.xib */; };
 		9D4525011E2F4DE2002E5E9A /* CQSBNewsTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4525001E2F4DE2002E5E9A /* CQSBNewsTypeModel.m */; };
 		9D4525081E2F6762002E5E9A /* CQSBPushHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4525071E2F6762002E5E9A /* CQSBPushHomeVC.m */; };
+		9D4E92B71E31F508001F8B47 /* cqsb_newsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D4E92B61E31F508001F8B47 /* cqsb_newsList.plist */; };
+		9D4E92BA1E31F5D8001F8B47 /* CQSBNewsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4E92B91E31F5D8001F8B47 /* CQSBNewsListModel.m */; };
+		9D4E92BE1E31FA01001F8B47 /* CQSBNewSingleType1Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4E92BC1E31FA01001F8B47 /* CQSBNewSingleType1Cell.m */; };
+		9D4E92BF1E31FA01001F8B47 /* CQSBNewSingleType1Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D4E92BD1E31FA01001F8B47 /* CQSBNewSingleType1Cell.xib */; };
+		9D4E92C31E32028E001F8B47 /* CQSBNewSingleType2Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4E92C11E32028E001F8B47 /* CQSBNewSingleType2Cell.m */; };
+		9D4E92C41E32028E001F8B47 /* CQSBNewSingleType2Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D4E92C21E32028E001F8B47 /* CQSBNewSingleType2Cell.xib */; };
+		9D4E92C81E32029A001F8B47 /* CQSBNewSingleType3Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4E92C61E32029A001F8B47 /* CQSBNewSingleType3Cell.m */; };
+		9D4E92C91E32029A001F8B47 /* CQSBNewSingleType3Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D4E92C71E32029A001F8B47 /* CQSBNewSingleType3Cell.xib */; };
 		9D5306751E2DB54300C561CE /* CQSBTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5306741E2DB54300C561CE /* CQSBTabBar.m */; };
 		9D557AB81E209DA400F54EBB /* CQSBBasicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D557AB71E209DA400F54EBB /* CQSBBasicVC.m */; };
 		9D6661DD1E1E316C00194595 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6661DC1E1E316C00194595 /* main.m */; };
@@ -77,6 +85,18 @@
 		9D4525001E2F4DE2002E5E9A /* CQSBNewsTypeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBNewsTypeModel.m; sourceTree = "<group>"; };
 		9D4525061E2F6762002E5E9A /* CQSBPushHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBPushHomeVC.h; sourceTree = "<group>"; };
 		9D4525071E2F6762002E5E9A /* CQSBPushHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBPushHomeVC.m; sourceTree = "<group>"; };
+		9D4E92B61E31F508001F8B47 /* cqsb_newsList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cqsb_newsList.plist; sourceTree = "<group>"; };
+		9D4E92B81E31F5D8001F8B47 /* CQSBNewsListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBNewsListModel.h; sourceTree = "<group>"; };
+		9D4E92B91E31F5D8001F8B47 /* CQSBNewsListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBNewsListModel.m; sourceTree = "<group>"; };
+		9D4E92BB1E31FA01001F8B47 /* CQSBNewSingleType1Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBNewSingleType1Cell.h; sourceTree = "<group>"; };
+		9D4E92BC1E31FA01001F8B47 /* CQSBNewSingleType1Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBNewSingleType1Cell.m; sourceTree = "<group>"; };
+		9D4E92BD1E31FA01001F8B47 /* CQSBNewSingleType1Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CQSBNewSingleType1Cell.xib; sourceTree = "<group>"; };
+		9D4E92C01E32028E001F8B47 /* CQSBNewSingleType2Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBNewSingleType2Cell.h; sourceTree = "<group>"; };
+		9D4E92C11E32028E001F8B47 /* CQSBNewSingleType2Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBNewSingleType2Cell.m; sourceTree = "<group>"; };
+		9D4E92C21E32028E001F8B47 /* CQSBNewSingleType2Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CQSBNewSingleType2Cell.xib; sourceTree = "<group>"; };
+		9D4E92C51E32029A001F8B47 /* CQSBNewSingleType3Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBNewSingleType3Cell.h; sourceTree = "<group>"; };
+		9D4E92C61E32029A001F8B47 /* CQSBNewSingleType3Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBNewSingleType3Cell.m; sourceTree = "<group>"; };
+		9D4E92C71E32029A001F8B47 /* CQSBNewSingleType3Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CQSBNewSingleType3Cell.xib; sourceTree = "<group>"; };
 		9D5306731E2DB54300C561CE /* CQSBTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBTabBar.h; sourceTree = "<group>"; };
 		9D5306741E2DB54300C561CE /* CQSBTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBTabBar.m; sourceTree = "<group>"; };
 		9D557AB61E209DA400F54EBB /* CQSBBasicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBBasicVC.h; sourceTree = "<group>"; };
@@ -163,6 +183,7 @@
 		9D4524F21E2F118D002E5E9A /* plist文件 */ = {
 			isa = PBXGroup;
 			children = (
+				9D4E92B61E31F508001F8B47 /* cqsb_newsList.plist */,
 				9D4524F31E2F1594002E5E9A /* cqsb_newstype.plist */,
 			);
 			path = "plist文件";
@@ -343,6 +364,8 @@
 			children = (
 				9D4524FF1E2F4DE2002E5E9A /* CQSBNewsTypeModel.h */,
 				9D4525001E2F4DE2002E5E9A /* CQSBNewsTypeModel.m */,
+				9D4E92B81E31F5D8001F8B47 /* CQSBNewsListModel.h */,
+				9D4E92B91E31F5D8001F8B47 /* CQSBNewsListModel.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -358,6 +381,15 @@
 				9D4524FA1E2F4D1A002E5E9A /* CQSBNewsTypeCell.h */,
 				9D4524FB1E2F4D1A002E5E9A /* CQSBNewsTypeCell.m */,
 				9D4524FC1E2F4D1A002E5E9A /* CQSBNewsTypeCell.xib */,
+				9D4E92BB1E31FA01001F8B47 /* CQSBNewSingleType1Cell.h */,
+				9D4E92BC1E31FA01001F8B47 /* CQSBNewSingleType1Cell.m */,
+				9D4E92BD1E31FA01001F8B47 /* CQSBNewSingleType1Cell.xib */,
+				9D4E92C01E32028E001F8B47 /* CQSBNewSingleType2Cell.h */,
+				9D4E92C11E32028E001F8B47 /* CQSBNewSingleType2Cell.m */,
+				9D4E92C21E32028E001F8B47 /* CQSBNewSingleType2Cell.xib */,
+				9D4E92C51E32029A001F8B47 /* CQSBNewSingleType3Cell.h */,
+				9D4E92C61E32029A001F8B47 /* CQSBNewSingleType3Cell.m */,
+				9D4E92C71E32029A001F8B47 /* CQSBNewSingleType3Cell.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -508,9 +540,13 @@
 			files = (
 				9D4524F41E2F1594002E5E9A /* cqsb_newstype.plist in Resources */,
 				9D4524FE1E2F4D1A002E5E9A /* CQSBNewsTypeCell.xib in Resources */,
+				9D4E92C91E32029A001F8B47 /* CQSBNewSingleType3Cell.xib in Resources */,
 				9D4524F91E2F35FC002E5E9A /* CQSBNewTypeCollectionReusableView.xib in Resources */,
 				9D6661EB1E1E316C00194595 /* LaunchScreen.storyboard in Resources */,
+				9D4E92C41E32028E001F8B47 /* CQSBNewSingleType2Cell.xib in Resources */,
+				9D4E92B71E31F508001F8B47 /* cqsb_newsList.plist in Resources */,
 				9D6661E81E1E316C00194595 /* Assets.xcassets in Resources */,
+				9D4E92BF1E31FA01001F8B47 /* CQSBNewSingleType1Cell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +620,7 @@
 				9D4524F81E2F35FC002E5E9A /* CQSBNewTypeCollectionReusableView.m in Sources */,
 				9D66621B1E1E3F0600194595 /* CQSBRefreshGifHeader.m in Sources */,
 				9D6662351E1E44CB00194595 /* UIImage+Image.m in Sources */,
+				9D4E92BE1E31FA01001F8B47 /* CQSBNewSingleType1Cell.m in Sources */,
 				9D66620C1E1E3AB100194595 /* CQSBNavigationController.m in Sources */,
 				9D6662021E1E390C00194595 /* CQSBTabBarController.m in Sources */,
 				9D66623D1E1E456500194595 /* CQSBHomeTitleBtn.m in Sources */,
@@ -592,12 +629,15 @@
 				9D6662361E1E44CB00194595 /* UIImageView+HSRound.m in Sources */,
 				9D4524E51E2F05D5002E5E9A /* HSManager.m in Sources */,
 				9D4525081E2F6762002E5E9A /* CQSBPushHomeVC.m in Sources */,
+				9D4E92BA1E31F5D8001F8B47 /* CQSBNewsListModel.m in Sources */,
 				9D4524FD1E2F4D1A002E5E9A /* CQSBNewsTypeCell.m in Sources */,
 				9D6662391E1E44CB00194595 /* UITextField+HSTextField.m in Sources */,
+				9D4E92C81E32029A001F8B47 /* CQSBNewSingleType3Cell.m in Sources */,
 				9D6662061E1E3A8300194595 /* CQSBHomeVC.m in Sources */,
 				9D4524F11E2F0F79002E5E9A /* CQSBNewsTypeVC.m in Sources */,
 				9D5306751E2DB54300C561CE /* CQSBTabBar.m in Sources */,
 				9D6662151E1E3ED800194595 /* CQSBRefreshFooter.m in Sources */,
+				9D4E92C31E32028E001F8B47 /* CQSBNewSingleType2Cell.m in Sources */,
 				9D6662101E1E3C4100194595 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				9D66623A1E1E44CB00194595 /* UIView+ZKBView.m in Sources */,
 				9D6661DD1E1E316C00194595 /* main.m in Sources */,

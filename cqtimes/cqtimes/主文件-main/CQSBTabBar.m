@@ -8,8 +8,7 @@
 
 #import "CQSBTabBar.h"
 #import "UIImage+Image.h"
-
-
+#import "CQSBPushHomeVC.h"
 //===============自定义中间按钮 begin==============
 @interface tabBarCenterBtn : UIButton
 @end
@@ -74,7 +73,7 @@
     if (self) {
         //背景白色
 //        [self setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]];
-        [self setBackgroundImage:[UIImage imageNamed:@"compose_toolbar_background"]];
+//        [self setBackgroundImage:[UIImage imageNamed:@"compose_toolbar_background"]];
     }
     return self;
 }
@@ -116,8 +115,16 @@
     DLogFunc
     
     
-//    UITabBarController *tabbarVC = (UITabBarController *) [UIApplication sharedApplication].keyWindow.rootViewController;
-//    UINavigationController *nav =  tabbarVC.selectedViewController;
+    UITabBarController *tabbarVC = (UITabBarController *) [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    CQSBPushHomeVC *vc = [[CQSBPushHomeVC alloc]init];
+    
+    [vc setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    
+    [tabbarVC presentViewController:vc animated:YES completion:^{
+       
+    }];
+    
     
 }
 

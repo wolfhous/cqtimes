@@ -20,8 +20,8 @@
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        [self setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-        [self setTitleColor:CQSBMainColor forState:UIControlStateSelected];
+        [self setTitleColor:CQSBColor(172, 172, 172) forState:UIControlStateNormal];
+        [self setTitleColor:[UIColor darkTextColor] forState:UIControlStateSelected];
     }
     return self;
 }

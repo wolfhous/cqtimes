@@ -11,22 +11,37 @@
 #import "CQSBBasicVC.h"
 #import "CQSBNewsTypeVC.h"
 #import "UIBarButtonItem+HSExtension.h"
-@interface CQSBHomeVC ()<UIScrollViewDelegate>
 
+
+#import "CQSBNewsTypeModel.h"
+@interface CQSBHomeVC ()<UIScrollViewDelegate>
+//标题滚动视图
 @property (nonatomic,strong)UIScrollView *titleScrollView;
-@property (nonatomic,strong)NSMutableArray *titleArray;
+//标题按钮
 @property (nonatomic,strong)CQSBHomeTitleBtn *selectBtn;
+//标题下滑块指示器
 @property (nonatomic,strong)UIView *indicateView;
+//主滚动视图
 @property (nonatomic,strong)UIScrollView *scrollView;
+
+/**
+ 主类型数组（标题数组）
+ */
+@property (nonatomic,strong)NSMutableArray<CQSBNewsTypeModel *> *arrayNewstype;
 @end
 
 @implementation CQSBHomeVC
-
+#pragma mark - 懒加载
+-(NSMutableArray<CQSBNewsTypeModel *> *)arrayNewstype{
+    if (!_arrayNewstype) {
+        _arrayNewstype = [NSMutableArray array];
+    }
+    return _arrayNewstype;
+}
 
 -(UIScrollView *)titleScrollView{
     if (!_titleScrollView) {
-        _titleScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 40, 44)];
-        _titleScrollView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        _titleScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 44)];
         _titleScrollView.showsHorizontalScrollIndicator = NO;
         _titleScrollView.showsVerticalScrollIndicator = NO;
         _titleScrollView.bounces = NO;
@@ -38,13 +53,7 @@
 }
 
 
--(NSMutableArray *)titleArray{
-    if (!_titleArray) {
-        _titleArray = [NSMutableArray array];
-        [_titleArray addObjectsFromArray:@[@"0234234",@"12",@"2786",@"你",@"你好",@"你好啊",@"非常好好"]];
-    }
-    return _titleArray;
-}
+
 
 
 
@@ -53,14 +62,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    //设置导航栏
-    [self setupNavBar];
-    //设置新闻分类栏目
-    [self setupCQTimesCatogary];
-    //设置子控制器
-    [self setupChildVC];
-    //添加子控制器
-    [self addChildVcView];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    //加载数据
+    [self loadHomeAPI_newstype];
+    
+    
 }
 
 -(void)setupNavBar{
@@ -87,15 +93,18 @@
     }];
 }
 -(void)setupCQTimesCatogary{
+    //指示器高度
+    CGFloat indicateViewHeight = 2;
+    
     //标题按钮
-    CGFloat h = self.titleScrollView.xmg_height - 1;
+    CGFloat h = self.titleScrollView.xmg_height - indicateViewHeight;
     CQSBHomeTitleBtn *lastBtn;
-    for (NSInteger i = 0; i < self.titleArray.count; i++) {
+    for (NSInteger i = 0; i < self.arrayNewstype.count; i++) {
         CQSBHomeTitleBtn *btn = [CQSBHomeTitleBtn buttonWithType:UIButtonTypeCustom];
         btn.tag = i;
-        [btn setTitle:self.titleArray[i] forState:UIControlStateNormal];
+        [btn setTitle:self.arrayNewstype[i].title forState:UIControlStateNormal];
         [btn sizeToFit];
-        btn.xmg_x = lastBtn.xmg_right;
+        btn.xmg_x = lastBtn.xmg_right + 5;
         btn.xmg_y = 0;
         btn.xmg_height = h;
         [btn addTarget:self action:@selector(clickTitleBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -113,7 +122,7 @@
     self.indicateView = indicateView;
     indicateView.backgroundColor = CQSBMainColor;
     indicateView.xmg_y = h;
-    indicateView.xmg_height = 1;
+    indicateView.xmg_height = indicateViewHeight;
     indicateView.xmg_width = self.selectBtn.titleLabel.xmg_width;
     indicateView.xmg_centerX = self.selectBtn.center.x;
     [self.titleScrollView addSubview:indicateView];
@@ -126,19 +135,21 @@
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.delegate = self;
-    scrollView.contentSize = CGSizeMake(SCREEN_WIDTH * self.titleArray.count, SCREEN_HEIGHT- 64 - self.titleScrollView.xmg_height - 44);
+    scrollView.contentSize = CGSizeMake(SCREEN_WIDTH * self.arrayNewstype.count, SCREEN_HEIGHT);
     scrollView.pagingEnabled = YES;
     scrollView.bounces = NO;
     [self.view addSubview:scrollView];
     self.scrollView = scrollView;
     
     //添加子控制器
-    for (NSInteger i = 0; i < self.titleArray.count; i ++) {
+    for (NSInteger i = 0; i < self.arrayNewstype.count; i ++) {
         CQSBBasicVC *vc = [CQSBBasicVC new];
+        //event_id 和 type 似乎 是一个值
+        vc.type = self.arrayNewstype[i].newstype_id;
+        vc.event_id = self.arrayNewstype[i].newstype_id;
+        vc.event_value = self.arrayNewstype[i].title;
         [self addChildViewController:vc];
     }
-    
-
 }
 #pragma mark - <UIScrollViewDelegate>
 /**
@@ -195,7 +206,31 @@
 }
 
 
-
+//加载数据
+-(void)loadHomeAPI_newstype{
+    HSParameters;
+    [HS_Http hs_postAPIName:API_newstype parameters:parameters succes:^(id responseObject) {
+        //解析模型
+        self.arrayNewstype = [CQSBNewsTypeModel mj_objectArrayWithKeyValuesArray:responseObject[@"postlist"]];
+        //设置导航栏
+        [self setupNavBar];
+        //设置新闻分类栏目
+        [self setupCQTimesCatogary];
+        //设置子控制器
+        [self setupChildVC];
+        //添加子控制器
+        [self addChildVcView];
+        
+//        DLog(@"====%lf",self.titleScrollView.frame.size.width);
+//        
+//        DLog(@"====%lf",self.navigationItem.titleView.frame.size.width);
+//        
+//        DLog(@"====%lf",SCREEN_WIDTH);
+        
+    } error:^(id error) {
+        
+    }];
+}
 
 
 @end

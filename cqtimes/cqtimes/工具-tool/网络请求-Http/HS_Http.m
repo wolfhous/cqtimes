@@ -74,10 +74,13 @@
     if (parameters == nil) {
         parameters = [NSMutableDictionary dictionary];
     }
+    
     //添加版本号
     parameters[@"version"] = [CQSB_AppSingleton sharedCQSB_AppSingleton].current_version;
     //添加deviceid
     parameters[@"deviceid"] = [CQSB_AppSingleton sharedCQSB_AppSingleton].deviceid;
+    //添加uid
+    parameters[@"uid"] = [CQSB_UserSingleton sharedCQSB_UserSingleton].uid;
     
     DLog(@"\n【请求接口】\n%@\n【请求参数】\n%@",apiName,parameters);
     
