@@ -26,4 +26,17 @@
 
 
 @property (nonatomic,strong)CQSBNewsListModel *model;
+
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightImageViewWidth;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightImageViewHeight;
+
+@property (weak, nonatomic) IBOutlet UIButton *delBtn;
+
+
+
+
+
+
 @end

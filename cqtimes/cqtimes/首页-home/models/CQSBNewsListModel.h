@@ -6,11 +6,29 @@
 //  Copyright © 2017年 com.houshuai. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+
+#import <UIKit/UIKit.h>
+
+typedef NS_ENUM(NSInteger,cellType) {
+    /** 文字类型新闻*/
+    cellTypeWord = 4,
+    /** 右侧图片类型新闻*/
+    cellTypeRightImage = 1,
+    /** 三张图片类型新闻*/
+    cellTypeThreeImage = 3,
+    /** 广告类型新闻*/
+    cellTypeAD = 30,
+    /** 大图类型新闻*/
+    cellTypeBigImage = 2,
+    
+};
+
+
+
 
 @interface CQSBNewsListModel : NSObject
-/** 模型状态 3 一排三个图片  1 正常右侧图片  4文字类型新闻 */
-@property (nonatomic,copy)NSString *modelstatus;
+/** 模型状态 枚举 */
+@property (nonatomic,assign)cellType modelstatusType;
 
 /** 标题*/
 @property (nonatomic,copy)NSString *title;
@@ -51,5 +69,9 @@
 /** ？ 2 */
 @property (nonatomic,copy)NSString *collect_is;
 
+//===========自定义添加数据==============
+
+/** cell 的高度*/
+@property (nonatomic,assign)CGFloat cellHeight;
 
 @end

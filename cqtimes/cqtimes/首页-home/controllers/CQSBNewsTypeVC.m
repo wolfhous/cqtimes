@@ -13,11 +13,11 @@
 @interface CQSBNewsTypeVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 /**
- 主视图
+ *主视图
  */
 @property (nonatomic,strong)UICollectionView *collectionView;
 /**
- 主类型数组
+ *主类型数组
  */
 @property (nonatomic,strong)NSMutableArray<CQSBNewsTypeModel *> *arrayNewstype;
 

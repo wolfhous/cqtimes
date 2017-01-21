@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,31 +14,30 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjm-5E-9Mp">
-                        <rect key="frame" x="285" y="56.5" width="20" height="20"/>
+                        <rect key="frame" x="285" y="41" width="20" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="20" id="DIm-7q-Wxr"/>
-                            <constraint firstAttribute="height" constant="20" id="hmQ-I7-JT9"/>
+                            <constraint firstAttribute="width" constant="20" id="Mzy-G1-nzN"/>
+                            <constraint firstAttribute="height" constant="20" id="bcM-o2-CiA"/>
                         </constraints>
                         <state key="normal" image="closeBtn_27x27_"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBw-wO-5jY">
-                        <rect key="frame" x="15" y="15" width="290" height="41.5"/>
+                        <rect key="frame" x="15" y="15" width="290" height="21"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Gjm-5E-9Mp" secondAttribute="trailing" constant="15" id="2W6-gO-k77"/>
-                    <constraint firstItem="VBw-wO-5jY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="DGN-XV-CDZ"/>
-                    <constraint firstItem="VBw-wO-5jY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Ts9-D8-qY3"/>
-                    <constraint firstAttribute="trailing" secondItem="VBw-wO-5jY" secondAttribute="trailing" constant="15" id="X90-EP-qAZ"/>
-                    <constraint firstItem="Gjm-5E-9Mp" firstAttribute="top" secondItem="VBw-wO-5jY" secondAttribute="bottom" id="qfC-G1-lYd"/>
-                    <constraint firstAttribute="bottom" secondItem="Gjm-5E-9Mp" secondAttribute="bottom" constant="10" id="yCx-z9-1zS"/>
+                    <constraint firstItem="Gjm-5E-9Mp" firstAttribute="top" secondItem="VBw-wO-5jY" secondAttribute="bottom" constant="5" id="64b-0P-IDh"/>
+                    <constraint firstItem="VBw-wO-5jY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="Dqu-iA-IBR"/>
+                    <constraint firstAttribute="trailing" secondItem="Gjm-5E-9Mp" secondAttribute="trailing" constant="15" id="Hhm-RY-AGU"/>
+                    <constraint firstItem="VBw-wO-5jY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="KF1-hL-6pf"/>
+                    <constraint firstAttribute="trailing" secondItem="VBw-wO-5jY" secondAttribute="trailing" constant="15" id="g73-d2-Xhv"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

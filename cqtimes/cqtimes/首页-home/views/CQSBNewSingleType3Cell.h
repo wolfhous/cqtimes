@@ -12,4 +12,21 @@
 @interface CQSBNewSingleType3Cell : UITableViewCell
 
 @property (nonatomic,strong)CQSBNewsListModel *model;
+
+
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewLeft;
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewCenter;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewRight;
+
+@property (weak, nonatomic) IBOutlet UIButton *delBtn;
+
+
+
+
 @end

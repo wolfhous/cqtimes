@@ -10,8 +10,16 @@
 
 @implementation CQSBNewsListModel
 
+/**
+ 模型映射
+
+ @return 返回映射字典
+ */
 + (NSDictionary *)mj_replacedKeyFromPropertyName
 {
-    return @{@"newslist_id": @"id"};
+    return @{
+             @"newslist_id": @"id",
+             @"modelstatusType":@"modelstatus"
+             };
 }
 @end
