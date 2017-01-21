@@ -15,6 +15,7 @@
     // Initialization code
     
     self.titleLabel.preferredMaxLayoutWidth = SCREEN_WIDTH - 30;
+    self.imageViewLeftHeight.constant = (SCREEN_WIDTH - 40)/3 * 3/4;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

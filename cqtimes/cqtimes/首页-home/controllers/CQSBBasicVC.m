@@ -12,6 +12,8 @@
 #import "CQSBNewSingleType2Cell.h"
 #import "CQSBNewSingleType3Cell.h"
 #import "CQSBNewSingleType4Cell.h"
+
+#import "CQSBNewsDetailVC.h"
 @interface CQSBBasicVC ()<UITableViewDelegate,UITableViewDataSource>
 
 /** 主表视图*/
@@ -128,7 +130,10 @@ static NSString *type4cellID = @"newSingleType4Cell";
         [self.tableView.mj_footer endRefreshing];
         [self.tableView.mj_header endRefreshing];
     } error:^(id error) {
-        
+        //结束转圈
+        [self.activityIndicatorView stopAnimating];
+        self.activityIndicatorView.hidden = YES;
+
         [self.tableView.mj_footer endRefreshing];
         [self.tableView.mj_header endRefreshing];
     }];
@@ -205,6 +210,9 @@ static NSString *type4cellID = @"newSingleType4Cell";
 #pragma mark 点击cell事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    CQSBNewsDetailVC *vc = [CQSBNewsDetailVC new];
+    vc.urlStr = self.arrayNews[indexPath.row].url;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

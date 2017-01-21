@@ -67,6 +67,7 @@
                 <outlet property="delBtn" destination="hy4-11-jgw" id="2qK-VY-aej"/>
                 <outlet property="imageViewCenter" destination="fB8-rz-eBw" id="qXQ-7c-EOh"/>
                 <outlet property="imageViewLeft" destination="FuO-cf-bDW" id="dkd-MK-a2c"/>
+                <outlet property="imageViewLeftHeight" destination="zbg-N7-jh9" id="URy-wG-IbJ"/>
                 <outlet property="imageViewRight" destination="BrX-Tg-nTp" id="erM-Ij-lMU"/>
                 <outlet property="titleLabel" destination="Zga-or-PqD" id="5oC-To-R88"/>
             </connections>

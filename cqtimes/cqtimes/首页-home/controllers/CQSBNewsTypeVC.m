@@ -27,6 +27,11 @@
  */
 @property (nonatomic,assign)BOOL isEdit;
 
+
+/** 网络圈圈*/
+@property (nonatomic,strong)UIActivityIndicatorView *activityIndicatorView;
+
+
 @end
 
 @implementation CQSBNewsTypeVC
@@ -34,6 +39,15 @@
 static NSString *newsTypeCellID = @"newsTypeCellID";
 static NSString *headerReusableView = @"headerReusableView";
 #pragma mark - 懒加载
+-(UIActivityIndicatorView *)activityIndicatorView{
+    if (!_activityIndicatorView) {
+        CGFloat w = 70;
+        _activityIndicatorView = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake((SCREEN_WIDTH-w)/2, (SCREEN_HEIGHT-w)/2, w, w)];
+        _activityIndicatorView.color = CQSBMainColor;
+        [self.view addSubview:_activityIndicatorView];
+    }
+    return _activityIndicatorView;
+}
 -(NSMutableArray<CQSBNewsTypeModel *> *)arrayNewstype{
     if (!_arrayNewstype) {
         _arrayNewstype = [NSMutableArray array];
@@ -57,6 +71,7 @@ static NSString *headerReusableView = @"headerReusableView";
         //添加长按手势（长按移动）
         UILongPressGestureRecognizer *longGesture = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(handleLongGesture:)];
         [_collectionView addGestureRecognizer:longGesture];
+        [self.view addSubview:_collectionView];
     }
     return _collectionView;
 }
@@ -95,8 +110,10 @@ static NSString *headerReusableView = @"headerReusableView";
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self addRithtBackBtn];
+    
+    //开始转圈
+    [self.activityIndicatorView startAnimating];
     [self loadAPI_newstype];
-    [self.view addSubview:self.collectionView];
 }
 //添加返回按钮
 -(void)addRithtBackBtn{
@@ -119,12 +136,19 @@ static NSString *headerReusableView = @"headerReusableView";
 }
 //加载数据
 -(void)loadAPI_newstype{
+    
     HSParameters;
     [HS_Http hs_postAPIName:API_newstype parameters:parameters succes:^(id responseObject) {
         self.arrayNewstype = [CQSBNewsTypeModel mj_objectArrayWithKeyValuesArray:responseObject[@"postlist"]];
+        //结束转圈
+        [self.activityIndicatorView stopAnimating];
+        self.activityIndicatorView.hidden = YES;
         [self.collectionView reloadData];
     } error:^(id error) {
-        
+        //结束转圈
+        [self.activityIndicatorView stopAnimating];
+        self.activityIndicatorView.hidden = YES;
+
     }];
 }
 

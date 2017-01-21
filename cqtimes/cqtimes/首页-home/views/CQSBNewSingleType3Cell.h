@@ -26,6 +26,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *delBtn;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageViewLeftHeight;
 
 
 
