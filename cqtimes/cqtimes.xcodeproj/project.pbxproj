@@ -34,6 +34,8 @@
 		9D4E92C91E32029A001F8B47 /* CQSBNewSingleType3Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D4E92C71E32029A001F8B47 /* CQSBNewSingleType3Cell.xib */; };
 		9D5306751E2DB54300C561CE /* CQSBTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5306741E2DB54300C561CE /* CQSBTabBar.m */; };
 		9D557AB81E209DA400F54EBB /* CQSBBasicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D557AB71E209DA400F54EBB /* CQSBBasicVC.m */; };
+		9D656A4D1E35ED3800248AAF /* HSLunchTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D656A4C1E35ED3800248AAF /* HSLunchTool.m */; };
+		9D656A501E35ED5C00248AAF /* HSLunchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D656A4F1E35ED5C00248AAF /* HSLunchVC.m */; };
 		9D6661DD1E1E316C00194595 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6661DC1E1E316C00194595 /* main.m */; };
 		9D6661E01E1E316C00194595 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6661DF1E1E316C00194595 /* AppDelegate.m */; };
 		9D6661E81E1E316C00194595 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6661E71E1E316C00194595 /* Assets.xcassets */; };
@@ -109,6 +111,10 @@
 		9D5306741E2DB54300C561CE /* CQSBTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBTabBar.m; sourceTree = "<group>"; };
 		9D557AB61E209DA400F54EBB /* CQSBBasicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBBasicVC.h; sourceTree = "<group>"; };
 		9D557AB71E209DA400F54EBB /* CQSBBasicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBBasicVC.m; sourceTree = "<group>"; };
+		9D656A4B1E35ED3800248AAF /* HSLunchTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLunchTool.h; sourceTree = "<group>"; };
+		9D656A4C1E35ED3800248AAF /* HSLunchTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLunchTool.m; sourceTree = "<group>"; };
+		9D656A4E1E35ED5C00248AAF /* HSLunchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLunchVC.h; sourceTree = "<group>"; };
+		9D656A4F1E35ED5C00248AAF /* HSLunchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLunchVC.m; sourceTree = "<group>"; };
 		9D6661D81E1E316C00194595 /* cqtimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cqtimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6661DC1E1E316C00194595 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9D6661DE1E1E316C00194595 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -230,6 +236,17 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		9D656A4A1E35ED0C00248AAF /* 启动广告-LunchAD */ = {
+			isa = PBXGroup;
+			children = (
+				9D656A4B1E35ED3800248AAF /* HSLunchTool.h */,
+				9D656A4C1E35ED3800248AAF /* HSLunchTool.m */,
+				9D656A4E1E35ED5C00248AAF /* HSLunchVC.h */,
+				9D656A4F1E35ED5C00248AAF /* HSLunchVC.m */,
+			);
+			path = "启动广告-LunchAD";
+			sourceTree = "<group>";
+		};
 		9D6661CF1E1E316C00194595 = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +323,7 @@
 		9D6661F31E1E365D00194595 /* 工具-tool */ = {
 			isa = PBXGroup;
 			children = (
+				9D656A4A1E35ED0C00248AAF /* 启动广告-LunchAD */,
 				9D6662111E1E3E7A00194595 /* 网络请求-Http */,
 				9D6662121E1E3E7A00194595 /* 自定义-MJref */,
 				9D4524E31E2F05D5002E5E9A /* HSManager.h */,
@@ -636,6 +654,7 @@
 				9D6662381E1E44CB00194595 /* UINavigationBar+HSNavigationBar.m in Sources */,
 				9D4524F81E2F35FC002E5E9A /* CQSBNewTypeCollectionReusableView.m in Sources */,
 				9D66621B1E1E3F0600194595 /* CQSBRefreshGifHeader.m in Sources */,
+				9D656A4D1E35ED3800248AAF /* HSLunchTool.m in Sources */,
 				9D6662351E1E44CB00194595 /* UIImage+Image.m in Sources */,
 				9D4E92BE1E31FA01001F8B47 /* CQSBNewSingleType1Cell.m in Sources */,
 				9D66620C1E1E3AB100194595 /* CQSBNavigationController.m in Sources */,
@@ -653,6 +672,7 @@
 				9D6662061E1E3A8300194595 /* CQSBHomeVC.m in Sources */,
 				9D4524F11E2F0F79002E5E9A /* CQSBNewsTypeVC.m in Sources */,
 				9D5306751E2DB54300C561CE /* CQSBTabBar.m in Sources */,
+				9D656A501E35ED5C00248AAF /* HSLunchVC.m in Sources */,
 				9D6662151E1E3ED800194595 /* CQSBRefreshFooter.m in Sources */,
 				9D4E92C31E32028E001F8B47 /* CQSBNewSingleType2Cell.m in Sources */,
 				9D6662101E1E3C4100194595 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,

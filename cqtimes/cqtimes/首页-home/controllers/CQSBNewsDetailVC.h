@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface CQSBNewsDetailVC : UIViewController
+
+/**
+ 网页url地址
+ */
 @property (nonatomic,strong)NSString *urlStr;
 @end
