@@ -47,8 +47,9 @@
  */
 - (void)setupChildViewControllers
 {
+    
+    [self setupOneChildViewController:[[CQSBNavigationController alloc]initWithRootViewController:[CQSBMeVC new]] title:@"发现" image:@"MyIconNormal_30x30_" selectedImage:@"MyIconHigh_30x30_"];
     [self setupOneChildViewController:[[CQSBNavigationController alloc]initWithRootViewController:[CQSBHomeVC new]] title:@"首页" image:@"HomeIconNormal_30x30_" selectedImage:@"HomeIconHigh_30x30_"];
-    [self setupOneChildViewController:[[CQSBNavigationController alloc]initWithRootViewController:[CQSBMeVC new]] title:@"我的" image:@"MyIconNormal_30x30_" selectedImage:@"MyIconHigh_30x30_"];
 }
 /**
  *  初始化一个子控制器

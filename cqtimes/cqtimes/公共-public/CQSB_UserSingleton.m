@@ -10,4 +10,12 @@
 
 @implementation CQSB_UserSingleton
 singleton_implementation(CQSB_UserSingleton)
+
+-(NSString *)uid{
+    if (!_uid) {
+        _uid = @"MDAwMDAwMDAwMICIcqmDuKaS";
+    }
+    return _uid;
+}
+
 @end

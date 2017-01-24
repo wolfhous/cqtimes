@@ -88,6 +88,8 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     //2设置超时时间
     manager.requestSerializer.timeoutInterval = 5;
+    //添加一个返回格式解析
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     //2.1顶栏状态转圈图形
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 
@@ -101,7 +103,7 @@
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];//顶栏状态转圈图形
             
             //判断返回状态码
-            
+            [[self alloc]judgeCode:responseObject];
             //请求成功返回数据
             success(responseObject);
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

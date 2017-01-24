@@ -157,7 +157,7 @@ static CGRect originalFrame;
     
     NSDate *detaildate=[NSDate dateWithTimeIntervalSince1970:time];
     
-    NSLog(@"date:%@",[detaildate description]);
+//    NSLog(@"date:%@",[detaildate description]);
     
     //实例化一个NSDateFormatter对象
     

@@ -34,8 +34,6 @@
 		9D4E92C91E32029A001F8B47 /* CQSBNewSingleType3Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D4E92C71E32029A001F8B47 /* CQSBNewSingleType3Cell.xib */; };
 		9D5306751E2DB54300C561CE /* CQSBTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5306741E2DB54300C561CE /* CQSBTabBar.m */; };
 		9D557AB81E209DA400F54EBB /* CQSBBasicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D557AB71E209DA400F54EBB /* CQSBBasicVC.m */; };
-		9D656A4D1E35ED3800248AAF /* HSLunchTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D656A4C1E35ED3800248AAF /* HSLunchTool.m */; };
-		9D656A501E35ED5C00248AAF /* HSLunchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D656A4F1E35ED5C00248AAF /* HSLunchVC.m */; };
 		9D6661DD1E1E316C00194595 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6661DC1E1E316C00194595 /* main.m */; };
 		9D6661E01E1E316C00194595 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6661DF1E1E316C00194595 /* AppDelegate.m */; };
 		9D6661E81E1E316C00194595 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6661E71E1E316C00194595 /* Assets.xcassets */; };
@@ -59,6 +57,12 @@
 		9D6662391E1E44CB00194595 /* UITextField+HSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D66622F1E1E44CB00194595 /* UITextField+HSTextField.m */; };
 		9D66623A1E1E44CB00194595 /* UIView+ZKBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6662311E1E44CB00194595 /* UIView+ZKBView.m */; };
 		9D66623D1E1E456500194595 /* CQSBHomeTitleBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D66623C1E1E456500194595 /* CQSBHomeTitleBtn.m */; };
+		9DE8ED0E1E3703DB00247FCA /* CQSBDiscoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8ED0C1E3703DB00247FCA /* CQSBDiscoverCell.m */; };
+		9DE8ED0F1E3703DB00247FCA /* CQSBDiscoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE8ED0D1E3703DB00247FCA /* CQSBDiscoverCell.xib */; };
+		9DE8ED121E37065F00247FCA /* CQSBDiscoverModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8ED111E37065F00247FCA /* CQSBDiscoverModel.m */; };
+		9DE8ED141E37204700247FCA /* api_discoverHot.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DE8ED131E37204700247FCA /* api_discoverHot.plist */; };
+		9DE8ED161E37205700247FCA /* api_discoverLatest.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DE8ED151E37205700247FCA /* api_discoverLatest.plist */; };
+		9DE8ED181E3720B800247FCA /* api_discoverSelf.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DE8ED171E3720B800247FCA /* api_discoverSelf.plist */; };
 		E03D648DFED23AF3FA06EF2D /* libPods-cqtimes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 203BB15640B690AAC1E215C5 /* libPods-cqtimes.a */; };
 /* End PBXBuildFile section */
 
@@ -111,10 +115,6 @@
 		9D5306741E2DB54300C561CE /* CQSBTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBTabBar.m; sourceTree = "<group>"; };
 		9D557AB61E209DA400F54EBB /* CQSBBasicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBBasicVC.h; sourceTree = "<group>"; };
 		9D557AB71E209DA400F54EBB /* CQSBBasicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBBasicVC.m; sourceTree = "<group>"; };
-		9D656A4B1E35ED3800248AAF /* HSLunchTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLunchTool.h; sourceTree = "<group>"; };
-		9D656A4C1E35ED3800248AAF /* HSLunchTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLunchTool.m; sourceTree = "<group>"; };
-		9D656A4E1E35ED5C00248AAF /* HSLunchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLunchVC.h; sourceTree = "<group>"; };
-		9D656A4F1E35ED5C00248AAF /* HSLunchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLunchVC.m; sourceTree = "<group>"; };
 		9D6661D81E1E316C00194595 /* cqtimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cqtimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6661DC1E1E316C00194595 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9D6661DE1E1E316C00194595 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -162,6 +162,14 @@
 		9D6662311E1E44CB00194595 /* UIView+ZKBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZKBView.m"; sourceTree = "<group>"; };
 		9D66623B1E1E456500194595 /* CQSBHomeTitleBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBHomeTitleBtn.h; sourceTree = "<group>"; };
 		9D66623C1E1E456500194595 /* CQSBHomeTitleBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBHomeTitleBtn.m; sourceTree = "<group>"; };
+		9DE8ED0B1E3703DB00247FCA /* CQSBDiscoverCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBDiscoverCell.h; sourceTree = "<group>"; };
+		9DE8ED0C1E3703DB00247FCA /* CQSBDiscoverCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBDiscoverCell.m; sourceTree = "<group>"; };
+		9DE8ED0D1E3703DB00247FCA /* CQSBDiscoverCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CQSBDiscoverCell.xib; sourceTree = "<group>"; };
+		9DE8ED101E37065F00247FCA /* CQSBDiscoverModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBDiscoverModel.h; sourceTree = "<group>"; };
+		9DE8ED111E37065F00247FCA /* CQSBDiscoverModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBDiscoverModel.m; sourceTree = "<group>"; };
+		9DE8ED131E37204700247FCA /* api_discoverHot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api_discoverHot.plist; sourceTree = "<group>"; };
+		9DE8ED151E37205700247FCA /* api_discoverLatest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api_discoverLatest.plist; sourceTree = "<group>"; };
+		9DE8ED171E3720B800247FCA /* api_discoverSelf.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api_discoverSelf.plist; sourceTree = "<group>"; };
 		C4E9E0A9B96FEC4A9CF3F1B2 /* Pods-cqtimes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cqtimes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cqtimes/Pods-cqtimes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,6 +205,9 @@
 		9D4524F21E2F118D002E5E9A /* plist文件 */ = {
 			isa = PBXGroup;
 			children = (
+				9DE8ED171E3720B800247FCA /* api_discoverSelf.plist */,
+				9DE8ED151E37205700247FCA /* api_discoverLatest.plist */,
+				9DE8ED131E37204700247FCA /* api_discoverHot.plist */,
 				9D4E92B61E31F508001F8B47 /* cqsb_newsList.plist */,
 				9D4524F31E2F1594002E5E9A /* cqsb_newstype.plist */,
 			);
@@ -239,10 +250,6 @@
 		9D656A4A1E35ED0C00248AAF /* 启动广告-LunchAD */ = {
 			isa = PBXGroup;
 			children = (
-				9D656A4B1E35ED3800248AAF /* HSLunchTool.h */,
-				9D656A4C1E35ED3800248AAF /* HSLunchTool.m */,
-				9D656A4E1E35ED5C00248AAF /* HSLunchVC.h */,
-				9D656A4F1E35ED5C00248AAF /* HSLunchVC.m */,
 			);
 			path = "启动广告-LunchAD";
 			sourceTree = "<group>";
@@ -447,6 +454,8 @@
 		9D6661FD1E1E365D00194595 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				9DE8ED101E37065F00247FCA /* CQSBDiscoverModel.h */,
+				9DE8ED111E37065F00247FCA /* CQSBDiscoverModel.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -454,6 +463,9 @@
 		9D6661FE1E1E365D00194595 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				9DE8ED0B1E3703DB00247FCA /* CQSBDiscoverCell.h */,
+				9DE8ED0C1E3703DB00247FCA /* CQSBDiscoverCell.m */,
+				9DE8ED0D1E3703DB00247FCA /* CQSBDiscoverCell.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -576,9 +588,13 @@
 				9D4524F91E2F35FC002E5E9A /* CQSBNewTypeCollectionReusableView.xib in Resources */,
 				8763ED7C1E3390DA0099DE85 /* CQSBNewSingleType4Cell.xib in Resources */,
 				9D6661EB1E1E316C00194595 /* LaunchScreen.storyboard in Resources */,
+				9DE8ED181E3720B800247FCA /* api_discoverSelf.plist in Resources */,
+				9DE8ED141E37204700247FCA /* api_discoverHot.plist in Resources */,
+				9DE8ED161E37205700247FCA /* api_discoverLatest.plist in Resources */,
 				9D4E92C41E32028E001F8B47 /* CQSBNewSingleType2Cell.xib in Resources */,
 				9D4E92B71E31F508001F8B47 /* cqsb_newsList.plist in Resources */,
 				9D6661E81E1E316C00194595 /* Assets.xcassets in Resources */,
+				9DE8ED0F1E3703DB00247FCA /* CQSBDiscoverCell.xib in Resources */,
 				9D4E92BF1E31FA01001F8B47 /* CQSBNewSingleType1Cell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -654,7 +670,6 @@
 				9D6662381E1E44CB00194595 /* UINavigationBar+HSNavigationBar.m in Sources */,
 				9D4524F81E2F35FC002E5E9A /* CQSBNewTypeCollectionReusableView.m in Sources */,
 				9D66621B1E1E3F0600194595 /* CQSBRefreshGifHeader.m in Sources */,
-				9D656A4D1E35ED3800248AAF /* HSLunchTool.m in Sources */,
 				9D6662351E1E44CB00194595 /* UIImage+Image.m in Sources */,
 				9D4E92BE1E31FA01001F8B47 /* CQSBNewSingleType1Cell.m in Sources */,
 				9D66620C1E1E3AB100194595 /* CQSBNavigationController.m in Sources */,
@@ -672,14 +687,15 @@
 				9D6662061E1E3A8300194595 /* CQSBHomeVC.m in Sources */,
 				9D4524F11E2F0F79002E5E9A /* CQSBNewsTypeVC.m in Sources */,
 				9D5306751E2DB54300C561CE /* CQSBTabBar.m in Sources */,
-				9D656A501E35ED5C00248AAF /* HSLunchVC.m in Sources */,
 				9D6662151E1E3ED800194595 /* CQSBRefreshFooter.m in Sources */,
+				9DE8ED0E1E3703DB00247FCA /* CQSBDiscoverCell.m in Sources */,
 				9D4E92C31E32028E001F8B47 /* CQSBNewSingleType2Cell.m in Sources */,
 				9D6662101E1E3C4100194595 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				9D66623A1E1E44CB00194595 /* UIView+ZKBView.m in Sources */,
 				9D6661DD1E1E316C00194595 /* main.m in Sources */,
 				9D6662181E1E3EEF00194595 /* CQSBRefreshGifFooter.m in Sources */,
 				9D4524E11E2F05A4002E5E9A /* Foundation+Log.m in Sources */,
+				9DE8ED121E37065F00247FCA /* CQSBDiscoverModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

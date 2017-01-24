@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "HSLunchTool.h"
 #import "CQSBTabBarController.h"
 @interface AppDelegate ()
 
@@ -20,10 +19,6 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[CQSBTabBarController alloc]init];
     [self.window makeKeyAndVisible];
-    
-    [HSLunchTool hs_showLaunchADWithImageUrlString:@"http://www.danzhaowang.com/ad/img3.jpg" withSuperScreenType:HSScreenMain withHideAfterTime:4 withShowCountDown:YES withBasicImage:nil withHandler:^(HSLunchTool *action) {
-        DLog(@"aa");
-    }];
     
     
     

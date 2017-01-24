@@ -115,18 +115,20 @@
 
 
 
+//=========== 发现 ===========
+//发现 - 最新
+//deviceid=11134D98-4777-4E56-90BE-DFDBB51D6D46&page=1&pageNum=10&uid=MDAwMDAwMDAwMICIcqmDuKaS&version=1.8.4
+#define API_discoverLatest @"https://my.cqtimes.cn/index.php?m=mobile&c=postapi&a=getPostForLatest"
 
 
+//发现 - 热门
+//deviceid=11134D98-4777-4E56-90BE-DFDBB51D6D46&page=1&pageNum=10&uid=MDAwMDAwMDAwMICIcqmDuKaS&version=1.8.4
+#define API_discoverHot @"https://my.cqtimes.cn/index.php?m=mobile&c=postapi&a=getPostForHot"
 
 
-
-
-
-
-
-
-
-
+//发现 - 我的
+//deviceid=11134D98-4777-4E56-90BE-DFDBB51D6D46&page=1&pageNum=10&uid=MDAwMDAwMDAwMICIcqmDuKaS&version=1.8.4
+#define API_discoverSelf @"https://my.cqtimes.cn/index.php?m=mobile&c=postapi&a=getPostForSelf"
 
 
 
