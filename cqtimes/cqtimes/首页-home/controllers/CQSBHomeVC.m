@@ -73,7 +73,6 @@
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem hs_itemWithImage:@"discover_unlogin_40x40_" highImage:@"discover_unlogin_40x40_" target:self action:@selector(clickLeftItem)];
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem hs_itemWithImage:@"extraBtnBackgroundImage_21x21_" highImage:@"extraBtnBackgroundImage_21x21_" target:self action:@selector(clickRightItem)];
-    
 }
 
 //点击左侧按钮

@@ -26,8 +26,7 @@
     _model = model;
     
     self.titleLabel.text = model.title;
-    
-    
+
     //强制布局
     [self layoutIfNeeded];
     //计算cell高度

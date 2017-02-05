@@ -47,13 +47,12 @@ static NSString *discoverCellID = @"discoverCell";
 #pragma mark - 懒加载
 -(UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
         _tableView.dataSource = self;
         _tableView.delegate = self;
         [_tableView registerNib:[UINib nibWithNibName:@"CQSBDiscoverCell" bundle:nil] forCellReuseIdentifier:discoverCellID];
         _tableView.tableFooterView = [UIView new];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.contentInset = UIEdgeInsetsMake(64, 0, 44, 0);
         [self.view addSubview:_tableView];
     }
     return _tableView;
@@ -82,8 +81,10 @@ static NSString *discoverCellID = @"discoverCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = CQSBRandomColor;
+    self.tableView.hidden = NO;
+    //设置导航栏
     [self setupNavBar];
-    
+    //默认点击Segment
     [self clickNavCenterSegment:self.segment];
 }
 
