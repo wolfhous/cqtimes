@@ -5,8 +5,7 @@
 
 #效果图
 
-![效果图.gif](http://upload-images.jianshu.io/upload_images/2923333-3b2c00bbe85e88d4.gif?imageMogr2/auto-orient/strip)
-
+![效果图.gif](https://github.com/wolfhous/cqtimes/blob/master/cqtimes/cqtimes/2017-02-05 14.56.42.gif)
 
 
 
