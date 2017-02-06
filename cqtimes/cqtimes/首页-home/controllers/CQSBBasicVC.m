@@ -12,9 +12,10 @@
 #import "CQSBNewSingleType2Cell.h"
 #import "CQSBNewSingleType3Cell.h"
 #import "CQSBNewSingleType4Cell.h"
-
 #import "CQSBNewsDetailVC.h"
-@interface CQSBBasicVC ()<UITableViewDelegate,UITableViewDataSource>
+#import "UIImage+Image.h"
+#import "CQSBDelCellView.h"//删除某行cell时，弹出的视图
+@interface CQSBBasicVC ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 
 /** 主表视图*/
 @property (nonatomic,strong)UITableView *tableView;
@@ -27,6 +28,8 @@
 
 /** 网络圈圈*/
 @property (nonatomic,strong)UIActivityIndicatorView *activityIndicatorView;
+/**  搜索bar*/
+@property (nonatomic,strong)UISearchBar *searchBar;
 
 @end
 
@@ -71,6 +74,14 @@ static NSString *type4cellID = @"newSingleType4Cell";
         _tableView.mj_header  = [CQSBRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadFirstData)];
         _tableView.mj_footer = [CQSBRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
         [self.view addSubview:_tableView];
+        //添加搜索框并设置contentOffset  tableView会自动判定tableHeaderView是UISearchBar的话，则会有类似微信的 隐藏 显示 滑动效果。
+        UISearchBar *searchbar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, _tableView.xmg_width, 40)];
+        searchbar.delegate = self;
+        [searchbar setBackgroundImage:[UIImage imageWithColor:[UIColor groupTableViewBackgroundColor]]];
+        _tableView.tableHeaderView = searchbar;
+        //-20 这个算法有待讨论
+        _tableView.contentOffset = CGPointMake(0, -20);
+        self.searchBar = searchbar;
     }
     return _tableView;
 }
@@ -194,8 +205,19 @@ static NSString *type4cellID = @"newSingleType4Cell";
     //知识点：btn.superview 是 cell.contentView  再往上的superView才是cell
     NSIndexPath *indexPath =[self.tableView indexPathForCell:((UITableViewCell *)[[btn superview] superview])];
     DLog(@"删除==%ld",indexPath.row);
-    [self.arrayNews removeObjectAtIndex:indexPath.row];
-    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+    
+    
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    
+    CGPoint point = [cell convertPoint:btn.frame.origin toView:nil];
+
+    NSLog(@"point = %@",NSStringFromCGPoint(point));
+    
+    CQSBDelCellView *delPopView = [[CQSBDelCellView alloc]initWithFrame:[UIScreen mainScreen].bounds withPoint:point withTites:@[@"0",@"1",@"2",@"3",@"4",@"5"]];
+    [delPopView show];
+    
+//    [self.arrayNews removeObjectAtIndex:indexPath.row];
+//    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     
 }
 
@@ -203,10 +225,12 @@ static NSString *type4cellID = @"newSingleType4Cell";
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
 }
+
 #pragma mark 实际高度 （实际高度实现重点 1赋值模型数据就开始强制布局 2在awakeFromNib实现cell里面label的preferredMaxLayoutWidth最大宽度）
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return self.arrayNews[indexPath.row].cellHeight;
 }
+
 #pragma mark 点击cell事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -215,6 +239,26 @@ static NSString *type4cellID = @"newSingleType4Cell";
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-
-
+#pragma mark - UISearchBarDelegate
+//开始编辑
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    [UIView animateWithDuration:1 animations:^{
+        //1
+        self.navigationController.navigationBar.transform = CGAffineTransformMakeTranslation(0, -64);
+        self.tableView.xmg_y -= 44;
+        self.searchBar.showsCancelButton = YES;
+    }];
+}
+//点击取消搜索按钮
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 44, 0);
+    [UIView animateWithDuration:1 animations:^{
+        //1.
+        self.navigationController.navigationBar.transform = CGAffineTransformIdentity;
+        self.tableView.xmg_y += 44;
+        //2.
+        self.searchBar.showsCancelButton = NO;
+        [self.searchBar endEditing:YES];
+    }];
+}
 @end

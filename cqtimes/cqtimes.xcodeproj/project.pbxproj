@@ -10,6 +10,7 @@
 		8763ED7B1E3390DA0099DE85 /* CQSBNewSingleType4Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8763ED791E3390DA0099DE85 /* CQSBNewSingleType4Cell.m */; };
 		8763ED7C1E3390DA0099DE85 /* CQSBNewSingleType4Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8763ED7A1E3390DA0099DE85 /* CQSBNewSingleType4Cell.xib */; };
 		8763EDA71E33CCAC0099DE85 /* CQSBNewsDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8763EDA61E33CCAC0099DE85 /* CQSBNewsDetailVC.m */; };
+		9D3E21061E48735B00051D1A /* CQSBDelCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D3E21051E48735B00051D1A /* CQSBDelCellView.m */; };
 		9D4524E11E2F05A4002E5E9A /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4524DD1E2F05A4002E5E9A /* Foundation+Log.m */; };
 		9D4524E21E2F05A4002E5E9A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4524DF1E2F05A4002E5E9A /* Reachability.m */; };
 		9D4524E51E2F05D5002E5E9A /* HSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4524E41E2F05D5002E5E9A /* HSManager.m */; };
@@ -75,6 +76,8 @@
 		8763ED7A1E3390DA0099DE85 /* CQSBNewSingleType4Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CQSBNewSingleType4Cell.xib; sourceTree = "<group>"; };
 		8763EDA51E33CCAC0099DE85 /* CQSBNewsDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBNewsDetailVC.h; sourceTree = "<group>"; };
 		8763EDA61E33CCAC0099DE85 /* CQSBNewsDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBNewsDetailVC.m; sourceTree = "<group>"; };
+		9D3E21041E48735B00051D1A /* CQSBDelCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBDelCellView.h; sourceTree = "<group>"; };
+		9D3E21051E48735B00051D1A /* CQSBDelCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBDelCellView.m; sourceTree = "<group>"; };
 		9D4524DD1E2F05A4002E5E9A /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		9D4524DE1E2F05A4002E5E9A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9D4524DF1E2F05A4002E5E9A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -202,6 +205,15 @@
 				6C4F918D5DBAB0F31F8AD5B0 /* Pods-cqtimes.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9D3E21031E48734900051D1A /* 删除cell-pop */ = {
+			isa = PBXGroup;
+			children = (
+				9D3E21041E48735B00051D1A /* CQSBDelCellView.h */,
+				9D3E21051E48735B00051D1A /* CQSBDelCellView.m */,
+			);
+			path = "删除cell-pop";
 			sourceTree = "<group>";
 		};
 		9D4524F21E2F118D002E5E9A /* plist文件 */ = {
@@ -333,6 +345,7 @@
 		9D6661F31E1E365D00194595 /* 工具-tool */ = {
 			isa = PBXGroup;
 			children = (
+				9D3E21031E48734900051D1A /* 删除cell-pop */,
 				9D656A4A1E35ED0C00248AAF /* 启动广告-LunchAD */,
 				9D6662111E1E3E7A00194595 /* 网络请求-Http */,
 				9D6662121E1E3E7A00194595 /* 自定义-MJref */,
@@ -689,6 +702,7 @@
 				9D6662391E1E44CB00194595 /* UITextField+HSTextField.m in Sources */,
 				9D4E92C81E32029A001F8B47 /* CQSBNewSingleType3Cell.m in Sources */,
 				9D6662061E1E3A8300194595 /* CQSBHomeVC.m in Sources */,
+				9D3E21061E48735B00051D1A /* CQSBDelCellView.m in Sources */,
 				9D4524F11E2F0F79002E5E9A /* CQSBNewsTypeVC.m in Sources */,
 				9D5306751E2DB54300C561CE /* CQSBTabBar.m in Sources */,
 				9D6662151E1E3ED800194595 /* CQSBRefreshFooter.m in Sources */,
