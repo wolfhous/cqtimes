@@ -15,7 +15,7 @@
 #import "CQSBNewsDetailVC.h"
 #import "UIImage+Image.h"
 #import "CQSBDelCellView.h"//删除某行cell时，弹出的视图
-@interface CQSBBasicVC ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
+@interface CQSBBasicVC ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,CQSBDelCellViewDelegate>
 
 /** 主表视图*/
 @property (nonatomic,strong)UITableView *tableView;
@@ -204,23 +204,23 @@ static NSString *type4cellID = @"newSingleType4Cell";
 -(void)clickCellDelBtn:(UIButton *)btn{
     //知识点：btn.superview 是 cell.contentView  再往上的superView才是cell
     NSIndexPath *indexPath =[self.tableView indexPathForCell:((UITableViewCell *)[[btn superview] superview])];
-    DLog(@"删除==%ld",indexPath.row);
-    
-    
+//    DLog(@"删除==%ld",indexPath.row);
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    
     CGPoint point = [cell convertPoint:btn.frame.origin toView:nil];
-
-    NSLog(@"point = %@",NSStringFromCGPoint(point));
+    //btn点位置
+//    DLog(@"point = %@",NSStringFromCGPoint(point));
     
-    CQSBDelCellView *delPopView = [[CQSBDelCellView alloc]initWithFrame:[UIScreen mainScreen].bounds withPoint:point withTites:@[@"0",@"1",@"2",@"3",@"4",@"5"]];
+    CQSBDelCellView *delPopView = [[CQSBDelCellView alloc]initWithFrame:[UIScreen mainScreen].bounds withPoint:point withTites:@[@"0",@"1",@"2",@"3",@"4",@"5"] withIndexPath:indexPath withDelegate:self] ;
     [delPopView show];
     
-//    [self.arrayNews removeObjectAtIndex:indexPath.row];
-//    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     
 }
+#pragma mark - CQSBDelCellViewDelegate 删除cell代理回调事件
+-(void)CQSBDelCellViewDelegate_ClickBtnIndex:(NSInteger)index withIndexPath:(NSIndexPath*)indexPath{
+    [self.arrayNews removeObjectAtIndex:indexPath.row];
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
 
+}
 #pragma mark 预估高度
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
