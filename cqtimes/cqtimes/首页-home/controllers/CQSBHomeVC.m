@@ -11,9 +11,9 @@
 #import "CQSBBasicVC.h"
 #import "CQSBNewsTypeVC.h"
 #import "UIBarButtonItem+HSExtension.h"
-
-
-#import "CQSBNewsTypeModel.h"
+#import "CQSBNewsTypeModel.h"//新闻类型模型
+#import "CQSBMeCenterVC.h"//个人中心
+#import "JZNavigationExtension.h"//三方库 导航栏渐变效果
 @interface CQSBHomeVC ()<UIScrollViewDelegate>
 //标题滚动视图
 @property (nonatomic,strong)UIScrollView *titleScrollView;
@@ -53,20 +53,13 @@
 }
 
 
-
-
-
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.jz_navigationBarBackgroundAlpha = 1.f;//重要！！必须设置当前控制器的透明度为1，否则从一个其他颜色的navbar控制器返回到当前控制器时候，当前控制器navbar颜色不会改变！
     //加载数据
     [self loadHomeAPI_newstype];
-    
-    
 }
 
 -(void)setupNavBar{
@@ -78,8 +71,8 @@
 //点击左侧按钮
 -(void)clickLeftItem{
     DLogFunc
-    UIViewController *vc = [UIViewController new];
-    vc.view.backgroundColor = CQSBRandomColor;
+    CQSBMeCenterVC *vc = [CQSBMeCenterVC new];
+    vc.jz_navigationBarBackgroundHidden = YES;
     [self.navigationController pushViewController:vc animated:YES];
     
 }

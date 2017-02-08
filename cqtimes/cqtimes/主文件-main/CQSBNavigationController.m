@@ -7,11 +7,8 @@
 //
 
 #import "CQSBNavigationController.h"
-
-//侧滑
-#import "UINavigationController+FDFullscreenPopGesture.h"
-
 #import "UINavigationBar+HSNavigationBar.h"
+#import "JZNavigationExtension.h"//三方库 导航栏渐变效果 全屏侧滑返回功能
 @interface CQSBNavigationController ()
 
 @end
@@ -20,9 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //一句话添加侧滑返回功能
-    self.navigationController.fd_fullscreenPopGestureRecognizer.enabled=YES;
+    
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+    //添加导航栏切换转场动画
+//    self.jz_navigationBarTransitionStyle = JZNavigationBarTransitionStyleDoppelganger;
+    //添加侧滑返回功能
+    self.jz_fullScreenInteractivePopGestureEnabled = YES;
+    //另外一种侧滑返回效果 如设置了jz_fullScreenInteractivePopGestureEnabled ，下面这行则无需设置。
+//    self.navigationController.fd_fullscreenPopGestureRecognizer.enabled=YES;
 }
 
 /**
@@ -40,7 +42,7 @@
         [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
         // 隐藏底部的工具条
-        viewController.hidesBottomBarWhenPushed = YES;
+        viewController.hidesBottomBarWhenPushed = YES; 
     }
     // 所有设置搞定后, 再push控制器
     [super pushViewController:viewController animated:animated];

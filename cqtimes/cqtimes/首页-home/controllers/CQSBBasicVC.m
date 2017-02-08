@@ -210,10 +210,8 @@ static NSString *type4cellID = @"newSingleType4Cell";
     //btn点位置
 //    DLog(@"point = %@",NSStringFromCGPoint(point));
     
-    CQSBDelCellView *delPopView = [[CQSBDelCellView alloc]initWithFrame:[UIScreen mainScreen].bounds withPoint:point withTites:@[@"0",@"1",@"2",@"3",@"4",@"5"] withIndexPath:indexPath withDelegate:self] ;
+    CQSBDelCellView *delPopView = [[CQSBDelCellView alloc]initWithFrame:[UIScreen mainScreen].bounds withPoint:point withTites:@[@"低俗",@"内容质量差",@"不喜欢该类型",@"喜欢github",@"喜欢你",@"喜欢我",@"不喜欢开早会"] withIndexPath:indexPath withDelegate:self] ;
     [delPopView show];
-    
-    
 }
 #pragma mark - CQSBDelCellViewDelegate 删除cell代理回调事件
 -(void)CQSBDelCellViewDelegate_ClickBtnIndex:(NSInteger)index withIndexPath:(NSIndexPath*)indexPath{

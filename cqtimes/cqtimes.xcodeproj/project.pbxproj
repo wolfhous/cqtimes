@@ -10,6 +10,14 @@
 		8763ED7B1E3390DA0099DE85 /* CQSBNewSingleType4Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8763ED791E3390DA0099DE85 /* CQSBNewSingleType4Cell.m */; };
 		8763ED7C1E3390DA0099DE85 /* CQSBNewSingleType4Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8763ED7A1E3390DA0099DE85 /* CQSBNewSingleType4Cell.xib */; };
 		8763EDA71E33CCAC0099DE85 /* CQSBNewsDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8763EDA61E33CCAC0099DE85 /* CQSBNewsDetailVC.m */; };
+		9D331EB81E4ABEBB0000C9A8 /* CQSBMeCenterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D331EB71E4ABEBB0000C9A8 /* CQSBMeCenterVC.m */; };
+		9D331F261E4AEB8A0000C9A8 /* _JZNavigationInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D331F191E4AEB8A0000C9A8 /* _JZNavigationInteractiveTransition.m */; };
+		9D331F271E4AEB8A0000C9A8 /* _JZValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D331F1B1E4AEB8A0000C9A8 /* _JZValue.m */; };
+		9D331F281E4AEB8A0000C9A8 /* NSNumber+JZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D331F1D1E4AEB8A0000C9A8 /* NSNumber+JZExtension.m */; };
+		9D331F291E4AEB8A0000C9A8 /* UINavigationBar+JZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D331F1F1E4AEB8A0000C9A8 /* UINavigationBar+JZExtension.m */; };
+		9D331F2A1E4AEB8A0000C9A8 /* UIToolbar+JZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D331F211E4AEB8A0000C9A8 /* UIToolbar+JZExtension.m */; };
+		9D331F2B1E4AEB8A0000C9A8 /* UINavigationController+JZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D331F231E4AEB8A0000C9A8 /* UINavigationController+JZExtension.m */; };
+		9D331F2C1E4AEB8A0000C9A8 /* UIViewController+JZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D331F251E4AEB8A0000C9A8 /* UIViewController+JZExtension.m */; };
 		9D3E21061E48735B00051D1A /* CQSBDelCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D3E21051E48735B00051D1A /* CQSBDelCellView.m */; };
 		9D4524E11E2F05A4002E5E9A /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4524DD1E2F05A4002E5E9A /* Foundation+Log.m */; };
 		9D4524E21E2F05A4002E5E9A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4524DF1E2F05A4002E5E9A /* Reachability.m */; };
@@ -76,6 +84,24 @@
 		8763ED7A1E3390DA0099DE85 /* CQSBNewSingleType4Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CQSBNewSingleType4Cell.xib; sourceTree = "<group>"; };
 		8763EDA51E33CCAC0099DE85 /* CQSBNewsDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBNewsDetailVC.h; sourceTree = "<group>"; };
 		8763EDA61E33CCAC0099DE85 /* CQSBNewsDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBNewsDetailVC.m; sourceTree = "<group>"; };
+		9D331EB61E4ABEBB0000C9A8 /* CQSBMeCenterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBMeCenterVC.h; sourceTree = "<group>"; };
+		9D331EB71E4ABEBB0000C9A8 /* CQSBMeCenterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBMeCenterVC.m; sourceTree = "<group>"; };
+		9D331F151E4AEB8A0000C9A8 /* JZNavigationExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZNavigationExtension.h; sourceTree = "<group>"; };
+		9D331F171E4AEB8A0000C9A8 /* _JZ-objc-internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "_JZ-objc-internal.h"; sourceTree = "<group>"; };
+		9D331F181E4AEB8A0000C9A8 /* _JZNavigationInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _JZNavigationInteractiveTransition.h; sourceTree = "<group>"; };
+		9D331F191E4AEB8A0000C9A8 /* _JZNavigationInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _JZNavigationInteractiveTransition.m; sourceTree = "<group>"; };
+		9D331F1A1E4AEB8A0000C9A8 /* _JZValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _JZValue.h; sourceTree = "<group>"; };
+		9D331F1B1E4AEB8A0000C9A8 /* _JZValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _JZValue.m; sourceTree = "<group>"; };
+		9D331F1C1E4AEB8A0000C9A8 /* NSNumber+JZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+JZExtension.h"; sourceTree = "<group>"; };
+		9D331F1D1E4AEB8A0000C9A8 /* NSNumber+JZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+JZExtension.m"; sourceTree = "<group>"; };
+		9D331F1E1E4AEB8A0000C9A8 /* UINavigationBar+JZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+JZExtension.h"; sourceTree = "<group>"; };
+		9D331F1F1E4AEB8A0000C9A8 /* UINavigationBar+JZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+JZExtension.m"; sourceTree = "<group>"; };
+		9D331F201E4AEB8A0000C9A8 /* UIToolbar+JZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIToolbar+JZExtension.h"; sourceTree = "<group>"; };
+		9D331F211E4AEB8A0000C9A8 /* UIToolbar+JZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+JZExtension.m"; sourceTree = "<group>"; };
+		9D331F221E4AEB8A0000C9A8 /* UINavigationController+JZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JZExtension.h"; sourceTree = "<group>"; };
+		9D331F231E4AEB8A0000C9A8 /* UINavigationController+JZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JZExtension.m"; sourceTree = "<group>"; };
+		9D331F241E4AEB8A0000C9A8 /* UIViewController+JZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JZExtension.h"; sourceTree = "<group>"; };
+		9D331F251E4AEB8A0000C9A8 /* UIViewController+JZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JZExtension.m"; sourceTree = "<group>"; };
 		9D3E21041E48735B00051D1A /* CQSBDelCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBDelCellView.h; sourceTree = "<group>"; };
 		9D3E21051E48735B00051D1A /* CQSBDelCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBDelCellView.m; sourceTree = "<group>"; };
 		9D4524DD1E2F05A4002E5E9A /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
@@ -205,6 +231,37 @@
 				6C4F918D5DBAB0F31F8AD5B0 /* Pods-cqtimes.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9D331F141E4AEB8A0000C9A8 /* JZNavigationExtension */ = {
+			isa = PBXGroup;
+			children = (
+				9D331F151E4AEB8A0000C9A8 /* JZNavigationExtension.h */,
+				9D331F161E4AEB8A0000C9A8 /* Private */,
+				9D331F221E4AEB8A0000C9A8 /* UINavigationController+JZExtension.h */,
+				9D331F231E4AEB8A0000C9A8 /* UINavigationController+JZExtension.m */,
+				9D331F241E4AEB8A0000C9A8 /* UIViewController+JZExtension.h */,
+				9D331F251E4AEB8A0000C9A8 /* UIViewController+JZExtension.m */,
+			);
+			path = JZNavigationExtension;
+			sourceTree = "<group>";
+		};
+		9D331F161E4AEB8A0000C9A8 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				9D331F171E4AEB8A0000C9A8 /* _JZ-objc-internal.h */,
+				9D331F181E4AEB8A0000C9A8 /* _JZNavigationInteractiveTransition.h */,
+				9D331F191E4AEB8A0000C9A8 /* _JZNavigationInteractiveTransition.m */,
+				9D331F1A1E4AEB8A0000C9A8 /* _JZValue.h */,
+				9D331F1B1E4AEB8A0000C9A8 /* _JZValue.m */,
+				9D331F1C1E4AEB8A0000C9A8 /* NSNumber+JZExtension.h */,
+				9D331F1D1E4AEB8A0000C9A8 /* NSNumber+JZExtension.m */,
+				9D331F1E1E4AEB8A0000C9A8 /* UINavigationBar+JZExtension.h */,
+				9D331F1F1E4AEB8A0000C9A8 /* UINavigationBar+JZExtension.m */,
+				9D331F201E4AEB8A0000C9A8 /* UIToolbar+JZExtension.h */,
+				9D331F211E4AEB8A0000C9A8 /* UIToolbar+JZExtension.m */,
+			);
+			path = Private;
 			sourceTree = "<group>";
 		};
 		9D3E21031E48734900051D1A /* 删除cell-pop */ = {
@@ -380,6 +437,7 @@
 		9D6661F61E1E365D00194595 /* 三方库-lib */ = {
 			isa = PBXGroup;
 			children = (
+				9D331F141E4AEB8A0000C9A8 /* JZNavigationExtension */,
 				9D66620D1E1E3C4100194595 /* FDFullscreenPopGesture */,
 			);
 			path = "三方库-lib";
@@ -406,6 +464,8 @@
 				9D4524F01E2F0F79002E5E9A /* CQSBNewsTypeVC.m */,
 				8763EDA51E33CCAC0099DE85 /* CQSBNewsDetailVC.h */,
 				8763EDA61E33CCAC0099DE85 /* CQSBNewsDetailVC.m */,
+				9D331EB61E4ABEBB0000C9A8 /* CQSBMeCenterVC.h */,
+				9D331EB71E4ABEBB0000C9A8 /* CQSBMeCenterVC.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -678,6 +738,7 @@
 				9D4524EE1E2F0A93002E5E9A /* CQSB_AppSingleton.m in Sources */,
 				9D4524E21E2F05A4002E5E9A /* Reachability.m in Sources */,
 				9D4525011E2F4DE2002E5E9A /* CQSBNewsTypeModel.m in Sources */,
+				9D331F271E4AEB8A0000C9A8 /* _JZValue.m in Sources */,
 				8763EDA71E33CCAC0099DE85 /* CQSBNewsDetailVC.m in Sources */,
 				9D6662341E1E44CB00194595 /* UIButton+HSButton.m in Sources */,
 				9D4524EB1E2F085D002E5E9A /* HS_Http.m in Sources */,
@@ -687,16 +748,22 @@
 				9D6662381E1E44CB00194595 /* UINavigationBar+HSNavigationBar.m in Sources */,
 				9D4524F81E2F35FC002E5E9A /* CQSBNewTypeCollectionReusableView.m in Sources */,
 				9D66621B1E1E3F0600194595 /* CQSBRefreshGifHeader.m in Sources */,
+				9D331F2C1E4AEB8A0000C9A8 /* UIViewController+JZExtension.m in Sources */,
 				9D6662351E1E44CB00194595 /* UIImage+Image.m in Sources */,
 				9D4E92BE1E31FA01001F8B47 /* CQSBNewSingleType1Cell.m in Sources */,
 				9D66620C1E1E3AB100194595 /* CQSBNavigationController.m in Sources */,
 				9D6662021E1E390C00194595 /* CQSBTabBarController.m in Sources */,
+				9D331EB81E4ABEBB0000C9A8 /* CQSBMeCenterVC.m in Sources */,
 				9D66623D1E1E456500194595 /* CQSBHomeTitleBtn.m in Sources */,
+				9D331F291E4AEB8A0000C9A8 /* UINavigationBar+JZExtension.m in Sources */,
+				9D331F261E4AEB8A0000C9A8 /* _JZNavigationInteractiveTransition.m in Sources */,
 				9D4524E81E2F066D002E5E9A /* CQSB_UserSingleton.m in Sources */,
 				9D6662331E1E44CB00194595 /* UIBarButtonItem+HSExtension.m in Sources */,
 				9D6662361E1E44CB00194595 /* UIImageView+HSRound.m in Sources */,
+				9D331F2A1E4AEB8A0000C9A8 /* UIToolbar+JZExtension.m in Sources */,
 				9D4524E51E2F05D5002E5E9A /* HSManager.m in Sources */,
 				9D4525081E2F6762002E5E9A /* CQSBPushHomeVC.m in Sources */,
+				9D331F281E4AEB8A0000C9A8 /* NSNumber+JZExtension.m in Sources */,
 				9D4E92BA1E31F5D8001F8B47 /* CQSBNewsListModel.m in Sources */,
 				9D4524FD1E2F4D1A002E5E9A /* CQSBNewsTypeCell.m in Sources */,
 				9D6662391E1E44CB00194595 /* UITextField+HSTextField.m in Sources */,
@@ -714,6 +781,7 @@
 				9D6662181E1E3EEF00194595 /* CQSBRefreshGifFooter.m in Sources */,
 				9D4524E11E2F05A4002E5E9A /* Foundation+Log.m in Sources */,
 				9DE8ED121E37065F00247FCA /* CQSBDiscoverModel.m in Sources */,
+				9D331F2B1E4AEB8A0000C9A8 /* UINavigationController+JZExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

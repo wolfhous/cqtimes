@@ -9,7 +9,7 @@
 #ifndef ApiHeader_h
 #define ApiHeader_h
 
-
+#pragma mark - ==========登录注册密码相关========begin==============
 //==========登录注册密码相关========begin==============
 
 //注册  密码好像是MD5加密
@@ -84,6 +84,7 @@
 //==========登录注册密码相关======= end ==============
 
 
+#pragma mark - ==========基础信息  相关======= begin ==============
 //==========基础信息  相关======= begin ==============
 //启动广告
 //deviceid=11134D98-4777-4E56-90BE-DFDBB51D6D46&uid=&version=1.8
@@ -101,20 +102,21 @@
 //==========基础信息 相关======= end ==============
 
 
+#pragma mark - ==========新闻信息  相关======= begin ==============
 
 
 //新闻信息
 //deviceid=11134D98-4777-4E56-90BE-DFDBB51D6D46&event_id=15&event_value=推荐&newstype_type=1&p=1&type=15&uid=&version=1.8
 #define API_newsList @"https://my.cqtimes.cn/?m=mobile&c=index&a=type_news_list"
 
-
+#pragma mark 频道信息
 //频道信息
 //deviceid=11134D98-4777-4E56-90BE-DFDBB51D6D46&type=2&version=1.8
 #define API_newstype @"https://my.cqtimes.cn/?m=mobile&c=newstype&a=index"
 
 
 
-
+#pragma mark - =========== 发现 ===========
 //=========== 发现 ===========
 //发现 - 最新
 //deviceid=11134D98-4777-4E56-90BE-DFDBB51D6D46&page=1&pageNum=10&uid=MDAwMDAwMDAwMICIcqmDuKaS&version=1.8.4

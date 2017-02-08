@@ -28,6 +28,7 @@
     if (self.isArrowDown == NO) {
         //默认箭头朝上
         [path addArcWithCenter:CGPointMake(radius, radius + topM) radius:radius startAngle:M_PI endAngle:M_PI_2*3 clockwise:YES];
+        //箭头
         [path addLineToPoint:CGPointMake(self.pointArrow.x - 10, topM)];
         [path addLineToPoint:CGPointMake(self.pointArrow.x , topM - 10)];
         [path addLineToPoint:CGPointMake(self.pointArrow.x +1 , topM)];
@@ -43,17 +44,13 @@
     }else{
         //箭头朝下
         [path addArcWithCenter:CGPointMake(radius, radius) radius:radius startAngle:M_PI endAngle:M_PI_2*3 clockwise:YES];
-        
         [path addArcWithCenter:CGPointMake(rect.size.width - radius, radius) radius:radius startAngle:M_PI_2*3 endAngle:0 clockwise:YES];
-        
-        
         [path addArcWithCenter:CGPointMake(rect.size.width - radius, rect.size.height - radius - topM) radius:radius startAngle:0 endAngle:M_PI_2 clockwise:YES];
+        //箭头
         [path addLineToPoint:CGPointMake(self.pointArrow.x - 1, rect.size.height - topM)];
-        
         [path addLineToPoint:CGPointMake(self.pointArrow.x , rect.size.height - topM + 10)];
-        
         [path addLineToPoint:CGPointMake(self.pointArrow.x - 10, rect.size.height - topM)];
-        
+
         [path addArcWithCenter:CGPointMake(radius, rect.size.height - radius - topM) radius:radius startAngle:M_PI_2 endAngle:M_PI clockwise:YES];
     }
     // 3.填充颜色
@@ -83,7 +80,6 @@
 -(UIWindow *)window{
     if (!_window) {
         _window = [UIApplication sharedApplication].keyWindow;
-        
     }
     return _window;
 }
@@ -104,7 +100,7 @@
         self.pointArrow = point;
         self.my_popView = [[popView alloc]initWithFrame:CGRectMake(self.pointArrow.x, self.pointArrow.y, CGFLOAT_MIN, CGFLOAT_MIN)];
         //根据高度计算箭头朝向
-        CGFloat popViewH = (titles.count / 2) * 35 + 70;
+        CGFloat popViewH = ((titles.count + 1) / 2  * 35) + 70;
         if (self.pointArrow.y + 5 + popViewH > SCREEN_HEIGHT - 20) {
             //赋值箭头朝向 默认为朝上 如果不足以显示，就朝下
             self.my_popView.isArrowDown = YES;
@@ -143,14 +139,14 @@
             //循环添加屏蔽理由按钮
             for (NSInteger i = 0; i < titles.count; i ++) {
                 UIButton *btn = [UIButton buttonWithType:0];
-                [btn setBackgroundColor:CQSBRandomColor];
+//                [btn setBackgroundColor:CQSBRandomColor];
                 [btn setTitle:titles[i] forState:UIControlStateNormal];
-                [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
                 btn.titleLabel.font = [UIFont systemFontOfSize:14];
                 btn.layer.masksToBounds = YES;
-                btn.layer.cornerRadius = 2;
+                btn.layer.cornerRadius = 5;
                 btn.layer.borderWidth = 0.5;
-                btn.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
+                btn.layer.borderColor = [UIColor grayColor].CGColor;
                 [self.my_popView addSubview:btn];
                 [btn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
                 //间距
