@@ -8,7 +8,6 @@
 
 #import "CQSBNavigationController.h"
 #import "UINavigationBar+HSNavigationBar.h"
-#import "JZNavigationExtension.h"//三方库 导航栏渐变效果 全屏侧滑返回功能
 @interface CQSBNavigationController ()
 
 @end

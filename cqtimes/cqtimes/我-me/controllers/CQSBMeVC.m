@@ -22,20 +22,38 @@
  主表视图
  */
 @property (nonatomic,strong)UITableView *tableView;
+//=====最新数据=======
 /**
  最新数据
  */
 @property (nonatomic,strong)NSMutableArray<CQSBDiscoverModel *> *arrayLatest;
 
 /**
+ 最新数据当前页码
+ */
+@property (nonatomic, assign)NSInteger pageLatest;
+
+//=====最热数据=======
+/**
  最热数据
  */
 @property (nonatomic,strong)NSMutableArray<CQSBDiscoverModel *> *arrayHot;
-
+/**
+ 最新数据当前页码
+ */
+@property (nonatomic, assign)NSInteger pageHot;
+//=====我的数据=======
 /**
  我的数据
  */
 @property (nonatomic,strong)NSMutableArray<CQSBDiscoverModel *> *arraySelf;
+/**
+ 最新数据当前页码
+ */
+@property (nonatomic, assign)NSInteger pageSelf;
+
+
+
 
 
 @end
@@ -50,9 +68,12 @@ static NSString *discoverCellID = @"discoverCell";
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
         _tableView.dataSource = self;
         _tableView.delegate = self;
+        _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         [_tableView registerNib:[UINib nibWithNibName:@"CQSBDiscoverCell" bundle:nil] forCellReuseIdentifier:discoverCellID];
         _tableView.tableFooterView = [UIView new];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.mj_header = [CQSBRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadFirstDate)];
+        _tableView.mj_footer = [CQSBRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDate)];
         [self.view addSubview:_tableView];
     }
     return _tableView;
@@ -75,7 +96,24 @@ static NSString *discoverCellID = @"discoverCell";
     }
     return _arrayLatest;
 }
-
+-(NSInteger)pageLatest{
+    if (!_pageLatest) {
+        _pageLatest = 1;
+    }
+    return _pageLatest;
+}
+-(NSInteger)pageHot{
+    if (!_pageHot) {
+        _pageHot = 1;
+    }
+    return _pageHot;
+}
+-(NSInteger)pageSelf{
+    if (!_pageSelf) {
+        _pageSelf = 1;
+    }
+    return _pageSelf;
+}
 
 #pragma mark - viewDidLoad
 - (void)viewDidLoad {
@@ -86,9 +124,32 @@ static NSString *discoverCellID = @"discoverCell";
     [self setupNavBar];
     //默认点击Segment
     [self clickNavCenterSegment:self.segment];
+    
+    
+
 }
-
-
+//下拉刷新 重新加载首页
+-(void)loadFirstDate{
+    if (self.segment.selectedSegmentIndex == 0) {
+        self.pageLatest = 1;
+    }else if (self.segment.selectedSegmentIndex == 1){
+        self.pageHot = 1;
+    }else{
+        self.pageSelf = 1;
+    }
+    [self loadDataAPI_discover_Latest_Hot_Self];
+}
+//上拉刷新 加载更多
+-(void)loadMoreDate{
+    if (self.segment.selectedSegmentIndex == 0) {
+        self.pageLatest ++;
+    }else if (self.segment.selectedSegmentIndex == 1){
+        self.pageHot ++;
+    }else{
+        self.pageSelf ++;
+    }
+    [self loadDataAPI_discover_Latest_Hot_Self];
+}
 
 
 -(void)setupNavBar{
@@ -123,32 +184,43 @@ static NSString *discoverCellID = @"discoverCell";
 
 
 -(void)loadDataAPI_discover_Latest_Hot_Self{
-    
     HSParameters;
-    
     NSString *api_url;
     if (self.segment.selectedSegmentIndex == 0) {
         api_url = API_discoverLatest;
+        parameters[@"page"] = @(self.pageLatest);
     }else if (self.segment.selectedSegmentIndex == 1){
         api_url = API_discoverHot;
+        parameters[@"page"] = @(self.pageHot);
     }else{
         api_url = API_discoverSelf;
+        parameters[@"page"] = @(self.pageSelf);
     }
-    
-    [HS_Http hs_postAPIName:api_url parameters:parameters succes:^(id responseObject) {
+    //我曹，这么坑的接口，害得我调试半小时！！！！！   post还不给面子，必须get 我晕了~~
+    [HS_Http hs_getAPIName:api_url parameters:parameters succes:^(id responseObject) {
         DLog(@"%@",responseObject);
         
         if (self.segment.selectedSegmentIndex == 0) {
-            
-            self.arrayLatest = [CQSBDiscoverModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            if (self.pageLatest == 1) {
+                self.arrayLatest = [CQSBDiscoverModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            }else{
+                [self.arrayLatest addObjectsFromArray:[CQSBDiscoverModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]]];
+            }
             
         }else if (self.segment.selectedSegmentIndex == 1){
-            self.arrayHot = [CQSBDiscoverModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
-
+            if (self.pageHot == 1) {
+                self.arrayHot = [CQSBDiscoverModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            }else{
+                [self.arrayHot addObjectsFromArray: [CQSBDiscoverModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]]];
+            }
         }else{
-            self.arraySelf = [CQSBDiscoverModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
-
+            if (self.pageSelf == 1) {
+                self.arraySelf = [CQSBDiscoverModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            }else{
+                [self.arraySelf addObjectsFromArray: [CQSBDiscoverModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]]];
+            }
         }
+        
         
         [self.tableView reloadData];
         [self.tableView.mj_footer endRefreshing];
@@ -182,7 +254,6 @@ static NSString *discoverCellID = @"discoverCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CQSBDiscoverCell *cell = [tableView dequeueReusableCellWithIdentifier:discoverCellID];
-    cell.backgroundColor = CQSBRandomColor;
     if (self.segment.selectedSegmentIndex == 0) {
         cell.model = self.arrayLatest[indexPath.row];
     }else if (self.segment.selectedSegmentIndex == 1){

@@ -13,7 +13,6 @@
 #import "UIBarButtonItem+HSExtension.h"
 #import "CQSBNewsTypeModel.h"//新闻类型模型
 #import "CQSBMeCenterVC.h"//个人中心
-#import "JZNavigationExtension.h"//三方库 导航栏渐变效果
 @interface CQSBHomeVC ()<UIScrollViewDelegate>
 //标题滚动视图
 @property (nonatomic,strong)UIScrollView *titleScrollView;

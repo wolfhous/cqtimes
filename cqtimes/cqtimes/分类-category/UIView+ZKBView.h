@@ -18,4 +18,5 @@
 @property (nonatomic, assign) CGFloat xmg_centerY;
 @property (nonatomic, assign) CGFloat xmg_right;
 @property (nonatomic, assign) CGFloat xmg_bottom;
++ (instancetype)xmg_viewFromXib;
 @end

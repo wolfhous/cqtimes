@@ -19,13 +19,19 @@
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 /** 用户发布时间*/
 @property (weak, nonatomic) IBOutlet UILabel *addTimeLabel;
+/** 标题*/
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 /** 内容*/
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
 
+
+
 /** 中间背景视图*/
 @property (weak, nonatomic) IBOutlet UIView *centerBgView;
+/** 中间背景视图高度*/
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerBgViewH;
 
 
 /** 点赞按钮*/

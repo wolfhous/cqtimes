@@ -7,23 +7,43 @@
 //
 
 #import "CQSBDiscoverCell.h"
+#import "CQSBDiscoverRowContain2View.h"//每行2个图片
+
+
+@interface CQSBDiscoverCell()
+
+/**
+ 每行2个图片主图
+ */
+@property (nonatomic,weak)CQSBDiscoverRowContain2View *rowContain2View;
+
+@end
+
 
 @implementation CQSBDiscoverCell
 
+
+-(CQSBDiscoverRowContain2View *)rowContain2View{
+    if (!_rowContain2View) {
+        _rowContain2View = [CQSBDiscoverRowContain2View xmg_viewFromXib];
+        [self.contentView addSubview:_rowContain2View];
+    }
+    return _rowContain2View;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
-    
+    //头像设置圆角
     self.userPhotoImageView.layer.cornerRadius = self.userPhotoImageView.xmg_height/2;
     self.userPhotoImageView.layer.masksToBounds = YES;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+//重写frame  在tableView有背景色的情况下，看出“分行”效果
+-(void)setFrame:(CGRect)frame{
+    frame.origin.y += 10;
+    frame.size.height -= 10;
+    [super setFrame:frame];
 }
-
 
 
 
@@ -33,20 +53,26 @@
     [self.userPhotoImageView sd_setImageWithURL:[NSURL URLWithString:model.userimg] placeholderImage:[UIImage imageNamed:@"discover_unlogin_40x40_"]];
     //用户名字
     self.userNameLabel.text = model.username;
-    //内容
+    //时间
     self.addTimeLabel.text = [HSManager hs_getTimeForDataStr:model.addtime];
     //内容
-    self.contentLabel.text = model.content;
+    if (model.content.length > 0) {
+        self.contentLabel.text = [NSString stringWithFormat:@"    %@",model.content];
+    }else{
+        self.contentLabel.text = model.content;
+    }
+        //标题
+    self.titleLabel.text = model.title;
     //点赞数量
     [self.praiseBtn setTitle:model.praises forState:UIControlStateNormal];
     //评论数量
     [self.commentBtn setTitle:model.mainComments forState:UIControlStateNormal];
     //设置中间图片
-//    [self setupCenterContentWithImageArray:model.images];
+    [self setupCenterContentWithImageArray:model.images];
     
     //强制布局
     [self layoutIfNeeded];
-    model.cellHeight = 400;
+    model.cellHeight = self.centerBgView.xmg_bottom + 40 + 15;
 }
 
 
@@ -62,42 +88,41 @@
     for (UIView *v in self.centerBgView.subviews) {
         [v removeFromSuperview];
     }
+    //self.centerBgVie左右边距和
+    CGFloat margin  = 15 * 2;
     
     if (array.count == 1) {
-        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 30, SCREEN_WIDTH *9/16)];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:array.firstObject[@"path"]] placeholderImage:[UIImage imageNamed:@"bigPlaceholder_414x193_"]];
-        [self.centerBgView addSubview:imageView];
-        
-    }else if (array.count == 2){
-        
-        
-        
-        
-      
-        
-        
-    }else if (array.count == 3){
-        for (NSInteger i = 0; i < array.count; i ++) {
-            UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH /2 - 2.5, SCREEN_WIDTH /2 - 2.5)];
-            [imageView sd_setImageWithURL:[NSURL URLWithString:array[i][@"path"]] placeholderImage:[UIImage imageNamed:@"bigPlaceholder_414x193_"]];
-            [self.centerBgView addSubview:imageView];
+        //设置图片位置
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - margin, (SCREEN_WIDTH - margin) / [array.firstObject[@"ratio"] floatValue])];
+        if (imageView.xmg_height > imageView.xmg_width*2) {
+            imageView.xmg_height = imageView.xmg_width*2;
+            imageView.contentMode = UIViewContentModeScaleAspectFit;
         }
-    }else if (array.count == 4){
-        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH *4/4)];
+        //设置图片链接
         [imageView sd_setImageWithURL:[NSURL URLWithString:array.firstObject[@"path"]] placeholderImage:[UIImage imageNamed:@"bigPlaceholder_414x193_"]];
+        //添加图片
         [self.centerBgView addSubview:imageView];
-    }else if (array.count == 5){
-        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH *4/4)];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:array.firstObject[@"path"]] placeholderImage:[UIImage imageNamed:@"bigPlaceholder_414x193_"]];
-        [self.centerBgView addSubview:imageView];
-    }else if (array.count == 6){
-        
-    }else if (array.count == 7){
-        
-    }else if (array.count == 8){
-        
-    }else if (array.count == 9){
-        
+        self.centerBgViewH.constant = imageView.xmg_height;
+    }else if (array.count > 1){
+        for (NSInteger i = 0; i < array.count; i ++) {
+            UIImageView *imageView = [[UIImageView alloc]init];
+            [self.centerBgView addSubview:imageView];
+            
+            NSInteger lineNum = array.count > 4 ? 3 : 2;//每行几个
+            CGFloat itemMargin = 10;//每个之间的间距
+            
+            CGFloat w = (SCREEN_WIDTH - margin - (lineNum - 1)*(itemMargin/2))/lineNum;
+            CGFloat x = i % lineNum * (w + itemMargin/2);
+            CGFloat y = i/lineNum * (w + itemMargin/2);
+            imageView.frame = CGRectMake(x, y, w, w);
+            //设置图片链接
+            [imageView sd_setImageWithURL:[NSURL URLWithString:array[i][@"path"]] placeholderImage:[UIImage imageNamed:@"bigPlaceholder_414x193_"]];
+            //设置高度
+            self.centerBgViewH.constant = self.centerBgView.subviews.lastObject.xmg_bottom;
+        }
+    }else{
+        DLog(@"没有图片");
+        self.centerBgViewH.constant = 0;
     }
     
     

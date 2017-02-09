@@ -57,7 +57,16 @@
 @property (nonatomic,copy)NSString *views;
 
 
-
+/*
+ images : [
+	{
+	path : https://my.cqtimes.cn/Uploads/Picture/2017-02-07/5899d8581059b.jpg,
+	thumb : https://my.cqtimes.cn/Uploads/Picture/2017-02-07/2_1_5899d8581059b.jpg,
+	ratio : 1.33,//猜测应该是图片比例
+	remark :
+ }
+ ]
+ */
 
 
 //===========自定义添加数据==============

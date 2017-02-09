@@ -115,4 +115,9 @@
     self.xmg_y = xmg_bottom - self.xmg_height;
 }
 
++ (instancetype)xmg_viewFromXib{
+    return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].lastObject;
+}
+
+
 @end
