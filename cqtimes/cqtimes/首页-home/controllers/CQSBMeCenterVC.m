@@ -43,6 +43,7 @@
         _tableView.contentInset = UIEdgeInsetsMake(headerViewH, 0, 0, 0);
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.tableFooterView = [UIView new];
+        _tableView.rowHeight = 60;
         [_tableView addSubview:self.headerImageView];
     }
     return _tableView;
@@ -74,6 +75,7 @@
     }
     return _arrayImages;
 }
+
 #pragma mark - viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];

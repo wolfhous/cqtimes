@@ -61,7 +61,7 @@
     }else{
         self.contentLabel.text = model.content;
     }
-        //标题
+    //标题
     self.titleLabel.text = model.title;
     //点赞数量
     [self.praiseBtn setTitle:model.praises forState:UIControlStateNormal];

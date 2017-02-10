@@ -7,6 +7,8 @@
 //
 
 #import "CQSBMeVC.h"
+#import "CQSBMeCenterVC.h"//个人中心
+#import "CQSBSearchVC.h"//搜索
 #import "UIBarButtonItem+HSExtension.h"
 #import "CQSBDiscoverCell.h"
 #import "CQSBDiscoverModel.h"
@@ -119,6 +121,7 @@ static NSString *discoverCellID = @"discoverCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = CQSBRandomColor;
+    self.jz_navigationBarBackgroundAlpha = 1.f;//重要！！必须设置当前控制器的透明度为1，否则从一个其他颜色的navbar控制器返回到当前控制器时候，当前控制器navbar颜色不会改变！
     self.tableView.hidden = NO;
     //设置导航栏
     [self setupNavBar];
@@ -168,14 +171,36 @@ static NSString *discoverCellID = @"discoverCell";
 
 -(void)clickLeftItem{
     DLogFunc
+    CQSBMeCenterVC *vc = [CQSBMeCenterVC new];
+    vc.jz_navigationBarBackgroundHidden = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
 -(void)clickRightItem{
     DLogFunc
+    CQSBSearchVC *vc = [CQSBSearchVC new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 -(void)clickNavCenterSegment:(UISegmentedControl *)segment{
     DLog(@"点击UISegmentedControl索引 = %ld",(long)segment.selectedSegmentIndex);
+    //解决切换时候重复加载问题  如果数组有数据，就不再加载😝
+    if (self.segment.selectedSegmentIndex == 0) {
+        if (self.arrayLatest.count > 0) {
+            [self.tableView reloadData];
+            return;
+        }
+    }else if (self.segment.selectedSegmentIndex == 1){
+        if (self.arrayHot.count > 0) {
+            [self.tableView reloadData];
+            return;
+        }
+    }else{
+        if (self.arraySelf.count > 0) {
+            [self.tableView reloadData];
+            return;
+        }
+    }
     [self loadDataAPI_discover_Latest_Hot_Self];
 }
 
@@ -275,8 +300,11 @@ static NSString *discoverCellID = @"discoverCell";
 }
 
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 200;
+    return 5201314-5201014;//我爱你一生一世😍 程序员也需要有自娱自乐的精神是不
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 @end

@@ -153,7 +153,7 @@ static CGRect originalFrame;
     oldframe = imageView.frame;
 }
 +(NSString *)hs_getTimeForDataStr:(NSString *)str{
-    NSTimeInterval time=[str doubleValue]+28800;//因为时差问题要加8小时 == 28800 sec
+    NSTimeInterval time=[str doubleValue];//+28800;//因为时差问题要加8小时 == 28800 sec
     
     NSDate *detaildate=[NSDate dateWithTimeIntervalSince1970:time];
     
