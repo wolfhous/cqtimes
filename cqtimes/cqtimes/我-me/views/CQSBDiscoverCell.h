@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "CQSBDiscoverModel.h"
+
+
+
+
+
 @interface CQSBDiscoverCell : UITableViewCell
 
 

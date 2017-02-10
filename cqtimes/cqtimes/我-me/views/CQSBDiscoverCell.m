@@ -7,29 +7,11 @@
 //
 
 #import "CQSBDiscoverCell.h"
-#import "CQSBDiscoverRowContain2View.h"//每行2个图片
-
-
-@interface CQSBDiscoverCell()
-
-/**
- 每行2个图片主图
- */
-@property (nonatomic,weak)CQSBDiscoverRowContain2View *rowContain2View;
-
+#import "MWPhotoBrowser.h"//照片浏览器
+@interface CQSBDiscoverCell()<MWPhotoBrowserDelegate>
 @end
 
-
 @implementation CQSBDiscoverCell
-
-
--(CQSBDiscoverRowContain2View *)rowContain2View{
-    if (!_rowContain2View) {
-        _rowContain2View = [CQSBDiscoverRowContain2View xmg_viewFromXib];
-        [self.contentView addSubview:_rowContain2View];
-    }
-    return _rowContain2View;
-}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -44,8 +26,6 @@
     frame.size.height -= 10;
     [super setFrame:frame];
 }
-
-
 
 -(void)setModel:(CQSBDiscoverModel *)model{
     _model = model;
@@ -76,15 +56,9 @@
 }
 
 
-
-
-
-
-
-
 //设置中间
 -(void)setupCenterContentWithImageArray:(NSArray *)array{
-    
+    //性能有待调优....没有达到完全重用思想...
     for (UIView *v in self.centerBgView.subviews) {
         [v removeFromSuperview];
     }
@@ -100,6 +74,13 @@
         }
         //设置图片链接
         [imageView sd_setImageWithURL:[NSURL URLWithString:array.firstObject[@"path"]] placeholderImage:[UIImage imageNamed:@"bigPlaceholder_414x193_"]];
+        //设置点击事件
+        imageView.tag = 0;
+        imageView.userInteractionEnabled = YES;
+        UIGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickImageView:)];
+        [imageView addGestureRecognizer:tap];
+
+        
         //添加图片
         [self.centerBgView addSubview:imageView];
         self.centerBgViewH.constant = imageView.xmg_height;
@@ -117,6 +98,12 @@
             imageView.frame = CGRectMake(x, y, w, w);
             //设置图片链接
             [imageView sd_setImageWithURL:[NSURL URLWithString:array[i][@"path"]] placeholderImage:[UIImage imageNamed:@"bigPlaceholder_414x193_"]];
+            
+            imageView.tag = i;
+            imageView.userInteractionEnabled = YES;
+            UIGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickImageView:)];
+            [imageView addGestureRecognizer:tap];
+            
             //设置高度
             self.centerBgViewH.constant = self.centerBgView.subviews.lastObject.xmg_bottom;
         }
@@ -124,16 +111,36 @@
         DLog(@"没有图片");
         self.centerBgViewH.constant = 0;
     }
-    
-    
+}
+
+//点击图片浏览
+-(void)clickImageView:(UIGestureRecognizer *)tap{
+    //新建照片浏览器
+    MWPhotoBrowser *bro = [[MWPhotoBrowser alloc]initWithDelegate:self];
+    //初始位置
+    [bro setCurrentPhotoIndex: tap.view.tag];
+    UITabBarController *tabBarVC = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    UINavigationController *nav = (UINavigationController *) tabBarVC.selectedViewController;
+    //退出照片浏览器
+    [nav pushViewController:bro animated:YES];
 }
 
 
+#pragma mark - MWPhotoBrowserDelegate
 
-
-
-
-
+//返回一共有几张图片
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser{
+    return self.model.images.count;
+}
+//对应的index对应的图片url
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index{
+    MWPhoto *p = [[MWPhoto alloc]initWithURL:[NSURL URLWithString:self.model.images[index][@"path"]]];
+    return p;
+}
+//对应index对应的nav标题
+- (NSString *)photoBrowser:(MWPhotoBrowser *)photoBrowser titleForPhotoAtIndex:(NSUInteger)index{
+    return [NSString stringWithFormat:@"%ld/%ld",index + 1,self.model.images.count];
+}
 
 
 

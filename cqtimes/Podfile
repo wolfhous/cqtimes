@@ -12,5 +12,6 @@ target 'cqtimes' do
   pod 'IQKeyboardManager'
   pod ‘Masonry’
   pod ‘UITableView+FDTemplateLayoutCell’
+  pod ‘MWPhotoBrowser’
 
 end

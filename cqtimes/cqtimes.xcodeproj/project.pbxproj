@@ -67,8 +67,6 @@
 		9D6662391E1E44CB00194595 /* UITextField+HSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D66622F1E1E44CB00194595 /* UITextField+HSTextField.m */; };
 		9D66623A1E1E44CB00194595 /* UIView+ZKBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6662311E1E44CB00194595 /* UIView+ZKBView.m */; };
 		9D66623D1E1E456500194595 /* CQSBHomeTitleBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D66623C1E1E456500194595 /* CQSBHomeTitleBtn.m */; };
-		9D7B4A5F1E4C114A00ABC03C /* CQSBDiscoverRowContain2View.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4A5E1E4C114A00ABC03C /* CQSBDiscoverRowContain2View.m */; };
-		9D7B4A611E4C115800ABC03C /* CQSBDiscoverRowContain2View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D7B4A601E4C115800ABC03C /* CQSBDiscoverRowContain2View.xib */; };
 		9DBC66C61E471BCA003C9411 /* 2017-02-05 14.56.42.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9DBC66C51E471BCA003C9411 /* 2017-02-05 14.56.42.gif */; };
 		9DE8ED0E1E3703DB00247FCA /* CQSBDiscoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8ED0C1E3703DB00247FCA /* CQSBDiscoverCell.m */; };
 		9DE8ED0F1E3703DB00247FCA /* CQSBDiscoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE8ED0D1E3703DB00247FCA /* CQSBDiscoverCell.xib */; };
@@ -197,9 +195,6 @@
 		9D6662311E1E44CB00194595 /* UIView+ZKBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZKBView.m"; sourceTree = "<group>"; };
 		9D66623B1E1E456500194595 /* CQSBHomeTitleBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBHomeTitleBtn.h; sourceTree = "<group>"; };
 		9D66623C1E1E456500194595 /* CQSBHomeTitleBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBHomeTitleBtn.m; sourceTree = "<group>"; };
-		9D7B4A5D1E4C114A00ABC03C /* CQSBDiscoverRowContain2View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBDiscoverRowContain2View.h; sourceTree = "<group>"; };
-		9D7B4A5E1E4C114A00ABC03C /* CQSBDiscoverRowContain2View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBDiscoverRowContain2View.m; sourceTree = "<group>"; };
-		9D7B4A601E4C115800ABC03C /* CQSBDiscoverRowContain2View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CQSBDiscoverRowContain2View.xib; sourceTree = "<group>"; };
 		9DBC66C51E471BCA003C9411 /* 2017-02-05 14.56.42.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "2017-02-05 14.56.42.gif"; sourceTree = "<group>"; };
 		9DE8ED0B1E3703DB00247FCA /* CQSBDiscoverCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBDiscoverCell.h; sourceTree = "<group>"; };
 		9DE8ED0C1E3703DB00247FCA /* CQSBDiscoverCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBDiscoverCell.m; sourceTree = "<group>"; };
@@ -560,9 +555,6 @@
 				9DE8ED0B1E3703DB00247FCA /* CQSBDiscoverCell.h */,
 				9DE8ED0C1E3703DB00247FCA /* CQSBDiscoverCell.m */,
 				9DE8ED0D1E3703DB00247FCA /* CQSBDiscoverCell.xib */,
-				9D7B4A5D1E4C114A00ABC03C /* CQSBDiscoverRowContain2View.h */,
-				9D7B4A5E1E4C114A00ABC03C /* CQSBDiscoverRowContain2View.m */,
-				9D7B4A601E4C115800ABC03C /* CQSBDiscoverRowContain2View.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -688,7 +680,6 @@
 				9DE8ED181E3720B800247FCA /* api_discoverSelf.plist in Resources */,
 				9DE8ED141E37204700247FCA /* api_discoverHot.plist in Resources */,
 				9DBC66C61E471BCA003C9411 /* 2017-02-05 14.56.42.gif in Resources */,
-				9D7B4A611E4C115800ABC03C /* CQSBDiscoverRowContain2View.xib in Resources */,
 				9DE8ED161E37205700247FCA /* api_discoverLatest.plist in Resources */,
 				9D4E92C41E32028E001F8B47 /* CQSBNewSingleType2Cell.xib in Resources */,
 				9D4E92B71E31F508001F8B47 /* cqsb_newsList.plist in Resources */,
@@ -791,7 +782,6 @@
 				9D4524FD1E2F4D1A002E5E9A /* CQSBNewsTypeCell.m in Sources */,
 				9D6662391E1E44CB00194595 /* UITextField+HSTextField.m in Sources */,
 				9D4E92C81E32029A001F8B47 /* CQSBNewSingleType3Cell.m in Sources */,
-				9D7B4A5F1E4C114A00ABC03C /* CQSBDiscoverRowContain2View.m in Sources */,
 				9D6662061E1E3A8300194595 /* CQSBHomeVC.m in Sources */,
 				9D3E21061E48735B00051D1A /* CQSBDelCellView.m in Sources */,
 				9D4524F11E2F0F79002E5E9A /* CQSBNewsTypeVC.m in Sources */,
