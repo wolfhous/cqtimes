@@ -74,6 +74,8 @@
 		9DE8ED141E37204700247FCA /* api_discoverHot.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DE8ED131E37204700247FCA /* api_discoverHot.plist */; };
 		9DE8ED161E37205700247FCA /* api_discoverLatest.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DE8ED151E37205700247FCA /* api_discoverLatest.plist */; };
 		9DE8ED181E3720B800247FCA /* api_discoverSelf.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DE8ED171E3720B800247FCA /* api_discoverSelf.plist */; };
+		9DFCD6741E65231C00A8C3FF /* CQSBLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFCD6721E65231C00A8C3FF /* CQSBLoginVC.m */; };
+		9DFCD6751E65231C00A8C3FF /* CQSBLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DFCD6731E65231C00A8C3FF /* CQSBLoginVC.xib */; };
 		E03D648DFED23AF3FA06EF2D /* libPods-cqtimes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 203BB15640B690AAC1E215C5 /* libPods-cqtimes.a */; };
 /* End PBXBuildFile section */
 
@@ -204,6 +206,9 @@
 		9DE8ED131E37204700247FCA /* api_discoverHot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api_discoverHot.plist; sourceTree = "<group>"; };
 		9DE8ED151E37205700247FCA /* api_discoverLatest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api_discoverLatest.plist; sourceTree = "<group>"; };
 		9DE8ED171E3720B800247FCA /* api_discoverSelf.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api_discoverSelf.plist; sourceTree = "<group>"; };
+		9DFCD6711E65231C00A8C3FF /* CQSBLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSBLoginVC.h; sourceTree = "<group>"; };
+		9DFCD6721E65231C00A8C3FF /* CQSBLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSBLoginVC.m; sourceTree = "<group>"; };
+		9DFCD6731E65231C00A8C3FF /* CQSBLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CQSBLoginVC.xib; sourceTree = "<group>"; };
 		C4E9E0A9B96FEC4A9CF3F1B2 /* Pods-cqtimes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cqtimes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cqtimes/Pods-cqtimes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -414,6 +419,7 @@
 		9D6661F31E1E365D00194595 /* 工具-tool */ = {
 			isa = PBXGroup;
 			children = (
+				9DFCD6701E65230600A8C3FF /* 登录注册-login */,
 				9D54B0881E4D6BB4008AC23E /* 搜索-search */,
 				9D3E21031E48734900051D1A /* 删除cell-pop */,
 				9D656A4A1E35ED0C00248AAF /* 启动广告-LunchAD */,
@@ -608,6 +614,16 @@
 			path = "自定义-MJref";
 			sourceTree = "<group>";
 		};
+		9DFCD6701E65230600A8C3FF /* 登录注册-login */ = {
+			isa = PBXGroup;
+			children = (
+				9DFCD6711E65231C00A8C3FF /* CQSBLoginVC.h */,
+				9DFCD6721E65231C00A8C3FF /* CQSBLoginVC.m */,
+				9DFCD6731E65231C00A8C3FF /* CQSBLoginVC.xib */,
+			);
+			path = "登录注册-login";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -682,6 +698,7 @@
 				9DBC66C61E471BCA003C9411 /* 2017-02-05 14.56.42.gif in Resources */,
 				9DE8ED161E37205700247FCA /* api_discoverLatest.plist in Resources */,
 				9D4E92C41E32028E001F8B47 /* CQSBNewSingleType2Cell.xib in Resources */,
+				9DFCD6751E65231C00A8C3FF /* CQSBLoginVC.xib in Resources */,
 				9D4E92B71E31F508001F8B47 /* cqsb_newsList.plist in Resources */,
 				9D6661E81E1E316C00194595 /* Assets.xcassets in Resources */,
 				9DE8ED0F1E3703DB00247FCA /* CQSBDiscoverCell.xib in Resources */,
@@ -786,6 +803,7 @@
 				9D3E21061E48735B00051D1A /* CQSBDelCellView.m in Sources */,
 				9D4524F11E2F0F79002E5E9A /* CQSBNewsTypeVC.m in Sources */,
 				9D5306751E2DB54300C561CE /* CQSBTabBar.m in Sources */,
+				9DFCD6741E65231C00A8C3FF /* CQSBLoginVC.m in Sources */,
 				9D6662151E1E3ED800194595 /* CQSBRefreshFooter.m in Sources */,
 				9DE8ED0E1E3703DB00247FCA /* CQSBDiscoverCell.m in Sources */,
 				9D4E92C31E32028E001F8B47 /* CQSBNewSingleType2Cell.m in Sources */,

@@ -5,6 +5,20 @@
       "scale" : "1x"
     },
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 6,
+          "height" : 58
+        },
+        "cap-insets" : {
+          "bottom" : 18,
+          "top" : 16,
+          "right" : 9,
+          "left" : 7
+        }
+      },
       "idiom" : "universal",
       "filename" : "common_button_big_blue_highlighted@2x.png",
       "scale" : "2x"

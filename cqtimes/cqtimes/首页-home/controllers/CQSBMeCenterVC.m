@@ -7,6 +7,7 @@
 //
 
 #import "CQSBMeCenterVC.h"
+#import "CQSBLoginVC.h"
 #define headerViewH 100
 
 @interface CQSBMeCenterVC ()<UITableViewDelegate,UITableViewDataSource>
@@ -79,8 +80,36 @@
 #pragma mark - viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //添加表视图
     [self.view addSubview:self.tableView];
+    //设置用户头像 以及 登录按钮
+    [self setupUserPhotoAndName];
 }
+
+
+-(void)setupUserPhotoAndName{
+    //新建头像图层
+    CGFloat w = 80;
+    UIImageView *userPhoto = [[UIImageView alloc]initWithFrame:CGRectMake((SCREEN_WIDTH - w)/2, -w-35, w, w)];
+    [userPhoto sd_setImageWithURL:[NSURL URLWithString:[CQSB_UserSingleton sharedCQSB_UserSingleton].img] placeholderImage:[UIImage imageNamed:@"discover_unlogin_40x40_"]];
+    [self.tableView addSubview:userPhoto];
+    //判断有无登录，新建登录按钮
+    if ([CQSB_UserSingleton sharedCQSB_UserSingleton].img == nil) {
+        UIButton *btnLogin = [[UIButton alloc]initWithFrame:CGRectMake((SCREEN_WIDTH - w)/2, userPhoto.xmg_bottom, w, w/2)];
+        btnLogin.titleLabel.font = [UIFont systemFontOfSize:15.0];
+        [btnLogin setTitle:@"点击登录" forState:UIControlStateNormal];
+        [btnLogin setTitleColor:CQSBMainColor forState:UIControlStateNormal];
+        [btnLogin addTarget:self action:@selector(clickLoginBtn) forControlEvents:UIControlEventTouchUpInside];
+        [self.tableView addSubview:btnLogin];
+    }
+}
+
+-(void)clickLoginBtn{
+    CQSBLoginVC *loginVC = [CQSBLoginVC new];
+    [self presentViewController:loginVC animated:YES completion:nil];
+}
+
+
 
 
 #pragma mark - UITableViewDataSource
