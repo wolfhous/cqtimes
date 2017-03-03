@@ -33,4 +33,14 @@
  *  @return 返回的时间字符串
  */
 +(NSString *)hs_getTimeForDataStr:(NSString *)str;
+
+/**
+ *  MD5加密
+ *
+ *  @param str 需要加密的字符串
+ *
+ *  @return 返回一个加密完的字符串
+ */
++(NSString *)hs_getMd5Str:(NSString *)str;
+
 @end

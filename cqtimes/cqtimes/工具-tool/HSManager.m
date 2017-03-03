@@ -8,6 +8,7 @@
 
 #import "HSManager.h"
 #import "Reachability.h"//1引入头文件，先设置info.plist里面的http请求为YES
+#import<CommonCrypto/CommonDigest.h>
 static CGRect oldframe;
 static CGRect originalFrame;
 @implementation HSManager
@@ -171,6 +172,21 @@ static CGRect originalFrame;
     
     NSString *currentDateStr = [dateFormatter stringFromDate: detaildate];
     return currentDateStr;
+}
+
+
+
+
+
++(NSString *)hs_getMd5Str:(NSString *)str{
+    const char *myPasswd = [str UTF8String];
+    unsigned char mdc[16];
+    CC_MD5(myPasswd, (CC_LONG)strlen(myPasswd), mdc);
+    NSMutableString *md5String = [NSMutableString string];
+    for (int i = 0; i< 16; i++) {
+        [md5String appendFormat:@"%02x",mdc[i]];
+    }
+    return md5String;
 }
 
 @end

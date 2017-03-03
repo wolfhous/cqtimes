@@ -24,12 +24,19 @@
 
 - (IBAction)clickLoginBtn:(id)sender {
     
-    if (self.uesrPwdTextField.text.length < 1 || self.uesrPwdTextField.text.length < 1) {
+    if (self.userNameTextField.text.length < 1 || self.uesrPwdTextField.text.length < 1) {
         DLog(@"用户名密码不能为空")
+        
         return;
     }
-    
-    
+    HSParameters;
+    parameters[@"password"] = [HSManager hs_getMd5Str:self.uesrPwdTextField.text];
+    parameters[@"phone"] = self.userNameTextField.text;
+    [HS_Http hs_postAPIName:API_login parameters:parameters succes:^(id responseObject) {
+        
+    } error:^(id error) {
+        
+    }];
 }
 
 

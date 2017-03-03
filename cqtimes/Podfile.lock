@@ -33,6 +33,7 @@ DEPENDENCIES:
   - AFNetworking
   - IQKeyboardManager
   - Masonry
+  - MBProgressHUD
   - MJExtension
   - MJRefresh
   - MWPhotoBrowser
@@ -51,6 +52,6 @@ SPEC CHECKSUMS:
   SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
 
-PODFILE CHECKSUM: e3bbb23b0a2721325527ade190a1e4d217870806
+PODFILE CHECKSUM: 6b38d6204cc335ab82183251ec4245a27379f020
 
 COCOAPODS: 1.2.0.beta.1

@@ -28,6 +28,7 @@
 #import "UITableView+FDTemplateLayoutCell.h"//cell自动布局
 #import "UIImageView+WebCache.h"//图片缓存
 #import "JZNavigationExtension.h"//三方库 导航栏渐变效果
+#import "MBProgressHUD.h"//提示进度条
 
 // 1DEBUG模式,控制输出
 #ifdef DEBUG

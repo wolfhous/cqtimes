@@ -13,5 +13,5 @@ target 'cqtimes' do
   pod ‘Masonry’
   pod ‘UITableView+FDTemplateLayoutCell’
   pod ‘MWPhotoBrowser’
-
+  pod ‘MBProgressHUD’
 end
